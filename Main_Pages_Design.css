@@ -1,0 +1,108 @@
+li{
+    font-size: 25px;
+    margin-left: 20px;
+}
+.logo{
+    padding-bottom: 10px;
+    max-height: 120px;
+    max-width: 120px;
+    border-radius: 20px;
+}
+.navbar{
+    background: linear-gradient(to bottom, transparent, grey); /* 使用渐变创建透明到白色的弧形 */
+}
+
+.btn{
+    color: black;
+    border: 2px solid black;
+}
+.custom-navbar{
+    border-bottom-left-radius:100% 20%;
+    border-bottom-right-radius:100% 20%;
+    height: 160px;
+}
+body{
+    background-color: lightgrey;
+}
+.icon{
+    max-width: 40px;
+    max-height: 40px;
+}
+.navbar-nav{
+    margin-left: 350px;
+}
+.profile-picture{
+    margin-right: 50px;
+    max-width: 100px;
+    max-height: 100px;
+}
+.profile-name{
+    margin-left: 20px;
+}
+.form-inline{
+    margin-right: 50px;
+}
+.nav-item{
+    font-size: 30px;
+}
+
+/* Slide Show */
+.carousel{
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 10%;
+    text-align: center;
+}
+
+.title-slideShow{
+    font-size: 64px;
+}
+.news{
+    max-height: 400px;
+}
+
+
+/* under the slide show the picture bar */
+.pictureWord-Container-one{
+    display: flex;
+    margin-right: 200px;
+}
+.item-include{
+    flex:auto;
+    margin-left: 200px;
+    border: 2px solid black;
+    text-align: center;
+    max-width: 500px;
+    max-height: 500px;
+    width: 500px;
+    height: 300px;
+}
+
+p{
+    text-align: center;
+}
+.Icon-one{
+    max-height: 100px;
+    max-width: 100px;
+    height:100px;
+    width: 100px;
+}
+.titleOf-CEF{
+    text-align: center;
+}
+.pictureWord-Container-two{
+    display: flex;
+    margin-right: 200px;
+    margin-top: 20px;
+}
+.item-include{
+    flex:auto;
+    margin-left: 200px;
+    border: 2px solid black;
+    text-align: center;
+    max-width: 500px;
+    max-height: 500px;
+    width: 500px;
+    height: 300px;
+}
+
