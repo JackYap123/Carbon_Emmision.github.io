@@ -32,7 +32,7 @@
     <div class="container">
         <div class="box form-box">
             <?php
-                if($isset($_POST['submit']))
+                if(isset($_POST['submit']))
                 {
                     $username = $_POST['username'];
                     $email = $_POST['email'];
@@ -45,9 +45,9 @@
                     {
                         echo "<div class='message'>
                         <p>Profile Update!!!</p>
-                      </div>,<br>"  ;
+                      </div> <br>"  ;
     
-                        echo"<a href='Home.php'><button class='btn'>Login in now</button>";
+                        echo"<a href='Home.php'><button class='btn'>Go Home</button>";
                     }
                     else{
                         $id = $_SESSION['id'];
