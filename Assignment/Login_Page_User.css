@@ -4,9 +4,15 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
-
+:root{
+    --primary-color:#c6c3c3;
+    --second-color:#ffffff;
+    --black-color:#000000;
+}
 body{
-    background: #e4e9f7;
+    background-image: url(backgroundSmoke.gif);
+    background-position:center;
+    background-size: cover;
 }
 .container{
     display:flex;
