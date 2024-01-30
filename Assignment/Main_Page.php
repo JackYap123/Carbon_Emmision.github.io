@@ -29,23 +29,7 @@
       include_once('php/config.php');
     ?>
 
-    <?php
-
-    $id = $_SESSION['id'];
-    $query = mysqli_query($con,"SELECT*FROM users WHERE Id = $id");
-    while($result = mysqli_fetch_assoc($query))
-    {
-        $res_Uname = $result['UserName'];
-        $res_Email = $result['Email'];
-        $res_Age = $result['Age'];
-        $res_id = $result['Id'];
-
-    }
-        echo "<a href = 'User_Edit_Profile.php?Id = $res_id'>Change Profile</a>"
-
-    ?>
-
-<a href="php/Logout_Page_User.php"><button class="btn">Log Out</button></a>
+    
       <!--Navbar-->
 
       <!--Slide show-->

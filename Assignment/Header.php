@@ -6,6 +6,24 @@
   <title>Document</title>
 </head>
 <body>
+
+<?php
+
+    $id = $_SESSION['id'];
+    $query = mysqli_query($con,"SELECT*FROM users WHERE Id = $id");
+    while($result = mysqli_fetch_assoc($query))
+    {
+        $res_Uname = $result['UserName'];
+        $res_Email = $result['Email'];
+        $res_Age = $result['Age'];
+        $res_id = $result['Id'];
+
+    }
+        echo "<a href = 'User_Edit_Profile.php?Id = $res_id'>Change Profile</a>"
+
+    ?>
+
+<a href="php/Logout_Page_User.php"><button class="btn">Log Out</button></a>
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
       <a class="navbar-brand" href="Main_Page.html"><img src="logo_Of_Carbon.png" alt="Logo Image" class="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +57,7 @@
         <div>
           <a href="profile_Page.html"><img src="profile_Picture.jpg" alt="Profile Picture" class="profile-picture"></a>
           <div class="profile-name">
-            <div class="name">Name</div><!--limit in 20 word-->
+            <div class="name"><?php echo $res_Uname?></div><!--limit in 20 word-->
             <div class="nickname">Nickname</div>
           </div>
         </div>
