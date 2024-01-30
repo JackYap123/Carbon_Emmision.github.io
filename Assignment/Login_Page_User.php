@@ -48,8 +48,9 @@
                     </div>
 
                     <div class="field input">
-                        <label for="password">Password</label>
+                        <label for="password">Password <i class="bx bx-lock-alt icon"></i></label>
                         <input type="password" name="password" id="password" autocomplete="off" required>
+                        
                     </div>
 
                     <div class="field">
