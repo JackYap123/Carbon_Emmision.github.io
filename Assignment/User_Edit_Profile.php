@@ -20,7 +20,7 @@
 <body>
     <div class="nav">
         <div class="logo">
-            <p><a href="home.php"></a>Logo</p>
+            <p><a href="Home.php"></a>Logo</p>
         </div>
 
         <div class="right-links">
@@ -32,35 +32,31 @@
     <div class="container">
         <div class="box form-box">
             <?php
-                if(isset($_POST['submit']))
-                {
+                if(isset($_POST['submit'])){
                     $username = $_POST['username'];
                     $email = $_POST['email'];
                     $age = $_POST['age'];
-                    
+
                     $id = $_SESSION['id'];
 
-                    $edit_query = mysqli_query($con,"UPDATE users SET Username = '$username',Email = '$email',Age=$age WHERE Id='$id'") or die("error occures");
-                    if($edit_query)
-                    {
-                        echo "<div class='message'>
-                        <p>Profile Update!!!</p>
-                      </div> <br>"  ;
-    
-                        echo"<a href='Home.php'><button class='btn'>Go Home</button>";
-                    }
-                    else{
-                        $id = $_SESSION['id'];
-                        $query = mysqli_query($con,"SELECT * FROM users WHERE Id = $id");
-
-                        while($result = mysqli_fetch_assoc($query))
-                        {
-                            $res_Uname = $result('UserName');
-                            $res_Email = $result('Email');
-                            $res_Age = $result('age');
-                        }
-                    }
+                    $edit_query = mysqli_query($con,"UPDATE users SET UserName='$username',Email='$email',Age='$age' WHERE Id = $id") or die("error occures");
                 
+                    if($edit_query){
+                        echo "<div class='message'>
+                    <p>Profile Updated!</p>
+                  </div> <br>";
+
+                    echo"<a href='Home.php'><button class='btn'>Login in now</button>";
+                    }
+                }else{
+                    $id = $_SESSION['id'];
+                    $query = mysqli_query($con,"SELECT * FROM users WHERE Id=$id");
+                    
+                    while($result = mysqli_fetch_assoc($query)){
+                        $res_Uname = $result['UserName'];
+                        $res_Email = $result['Email'];
+                        $res_Age = $result['Age'];
+                    }
             ?>
             <header>Change Profile</header>
             <form action="" method="post">
@@ -85,7 +81,6 @@
             </form>
         </div>
         <?php } ?>
-    </div>
-   
+        </div>
 </body>
 </html>
