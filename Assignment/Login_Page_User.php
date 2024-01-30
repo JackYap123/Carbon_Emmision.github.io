@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="Login_Page_User.css">
     <title>Login</title>
 </head>
@@ -42,9 +43,8 @@
                 <header>Login</header>
                 <form action="" method="post">
                     <div class="field input">
-                        <label for="email">Email</label>
+                        <label for="email">Email &nbsp;<i class="bx bx-user icon"></i></label>
                         <input type="text" name="email" id="email" autocomplete="off" required>
-                        <i class="bx bx-user icon"></i>
                     </div>
 
                     <div class="field input">
