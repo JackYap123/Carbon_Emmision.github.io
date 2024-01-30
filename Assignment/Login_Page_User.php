@@ -44,6 +44,7 @@
                     <div class="field input">
                         <label for="email">Email</label>
                         <input type="text" name="email" id="email" autocomplete="off" required>
+                        <i class="bx bx-user icon"></i>
                     </div>
 
                     <div class="field input">
