@@ -150,14 +150,14 @@
 					<br/>
 					<br/>
 					<button id="recalculate-btn" type="button" class="btn btn-success btn-lg btn-block">Recalculate</button>
-
-           <table class="calcgraph" style="margin: auto;">
+			<!---->
+        <table class="calcgraph" style="margin: auto;">
           <tbody><tr class="calcgraph">
             <td class="calcgraph"><img src="images/blackfoot2.gif" width="105" height="38" alt="Your footprint is 0.32 metric tons per year"></td>
             <td class="calcgraph"><img src="images/blackfoot1.gif" width="105" height="208" alt="The average footprint for people in India is 1.73 metric tons"></td>
             <td class="calcgraph"><img src="images/blackfoot.gif" width="105" height="240" alt="The worldwide target to combat climate change is 2 metric tons"></td>
-        </tr>
-        <tr class="calcgraph">
+       	 </tr>
+		<tr class="calcgraph">
             <th class="calcgraph">Your<br>Footprint</th><th class="calcgraph">Country<br>Average</th><th class="calcgraph">World<br>Target</th>
         </tr>
     </tbody>
