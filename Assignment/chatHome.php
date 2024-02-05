@@ -1,4 +1,4 @@
-<?php 
+<?php
     session_start();
 
     if(isset($_SESSION['username'])){
@@ -15,8 +15,18 @@
     <link rel="stylesheet" href="">
     <link rel="icon">
 </head>
-<body>
-    <a href="php/Logout_Page_User.php">Logout</a>
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="p-2 w-400 rounded shadow">
+        <div>
+            <div class="d-flex mb-3 p-3 bg-light justify-content-center align-items-center"></div>
+            <div class="d-flex align-items-center">
+                <img src="" alt="user-default.png" class="w-25 rounded-circle">
+                <h3 class="fs-xs m-2">Name</h3>
+                
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 <?php
