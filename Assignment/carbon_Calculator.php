@@ -168,7 +168,7 @@
     <li class="resultsbullets">The average footprint for people in India is 1.73 metric tons</li><li class="resultsbullets">The average for the European Union is about 6.4 metric tons</li><li class="resultsbullets">The average worldwide carbon footprint is about 5 metric tons</li><li class="resultsbullets">The worldwide target to combat climate change is 2 metric tons</li>
   </ul>
   </td></tr></tbody></table>
-  </div>	
+  </div>
 			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 				
 			</div>
