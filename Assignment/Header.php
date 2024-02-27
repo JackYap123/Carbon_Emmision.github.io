@@ -26,7 +26,7 @@
 
 <a href="php/Logout_Page_User.php"><button class="btn">Log Out</button></a>
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-      <a class="navbar-brand" href="Main_Page.html"><img src="logo_Of_Carbon.png" alt="Logo Image" class="logo"></a>
+      <a class="navbar-brand" href="Main_Page.php"><img src="logo_Of_Carbon.png" alt="Logo Image" class="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -59,7 +59,7 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <div>
-          <a href="profile_Page.html"><img src="profile_Picture.jpg" alt="Profile Picture" class="profile-picture"></a>
+          <a href="profile_Page.php"><img src="profile_Picture.jpg" alt="Profile Picture" class="profile-picture"></a>
           <div class="profile-name">
             <div class="name"><?php echo $res_Uname?></div><!--limit in 20 word-->
             <div class="nickname">Nickname</div>
