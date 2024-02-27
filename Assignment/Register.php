@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Login_Page_User.css">
+    <link rel="javascript" href="register_rules.js">
     <title>Register</title>
 </head>
 <body>
     <div class="container">
-        <div class="box form-box">
+        <div class="box form-box" >
         <?php
 // PHP code for handling form submission
     include_once("php/config.php");
@@ -44,25 +45,25 @@
     else{
 ?>
             <header>Sign Up</header>
-            <form action="" method="post">
+            <form action="" method="post" id="register_form">
                 <div class="field input">
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" autocomplete="off" required>
+                    <input type="text" name="username" id="username" autocomplete="new-password" required >
                 </div>
 
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
+                    <input type="text" name="email" id="email" autocomplete="new-password" required>
                 </div>
                 
                 <div class="field input">
                     <label for="age">Age</label>
-                    <input type="number" name="age" id="age" autocomplete="off" required>
+                    <input type="number" name="age" id="age" autocomplete="new-password" required>
                 </div>
 
                 <div class="field input">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" autocomplete="off" required>
+                    <input type="password" name="password" id="password" autocomplete="new-password" required>
                 </div>
 
                 <div class="field">
@@ -75,6 +76,6 @@
         </div>
         <?php } ?>
     </div>
-
+    
 </body>
 </html>
