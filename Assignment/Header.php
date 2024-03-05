@@ -59,7 +59,7 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <div>
-          <a href="profile_Page.php"><img src="profile_Picture.jpg" alt="Profile Picture" class="profile-picture"></a>
+          <a href="User_Edit_Profile.php"><img src="profile_Picture.jpg" alt="Profile Picture" class="profile-picture"></a>
           <div class="profile-name">
             <div class="name"><?php echo $res_Uname?></div><!--limit in 20 word-->
             <div class="nickname">Nickname</div>
