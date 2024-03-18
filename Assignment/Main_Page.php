@@ -97,11 +97,11 @@
                   </div>
                 </div>
                 <nav class="home-links1">
-                  <span class="home-nav121 bodySmall">Home</span>
-                  <span class="home-nav221 bodySmall">Features</span>
-                  <span class="home-nav321 bodySmall">Calculate</span>
-                  <span class="home-nav421 bodySmall">Challenges</span>
-                  <span class="home-nav521 bodySmall">Learn</span>
+                  <a href="Main_Page.php" class="home-nav121 bodySmall">Home</a>
+                  <a href="" class="home-nav221 bodySmall">Features</a>
+                  <a href="" class="home-nav321 bodySmall">Calculate</a>
+                  <a href="" class="home-nav421 bodySmall">Challenges</a>
+                  <a href="" class="home-nav521 bodySmall">Learn</a>
                 </nav>
                 <div class="home-buttons1">
                   <button class="buttonFlat">Login</button>
