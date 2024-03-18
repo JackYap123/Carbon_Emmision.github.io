@@ -98,7 +98,7 @@
                 </div>
                 <nav class="home-links1">
                   <a href="Main_Page.php" class="home-nav121 bodySmall">Home</a>
-                  <a href="" class="home-nav221 bodySmall">Features</a>
+                  <a href="Testing_Page.php" class="home-nav221 bodySmall">Features</a>
                   <a href="" class="home-nav321 bodySmall">Calculate</a>
                   <a href="" class="home-nav421 bodySmall">Challenges</a>
                   <a href="" class="home-nav521 bodySmall">Learn</a>
