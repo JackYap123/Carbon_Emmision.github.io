@@ -20,7 +20,7 @@
 <body>
     <div class="nav">
         <div class="logo">
-            <p><a href="Home.php"></a>Logo</p>
+            <p><a href="Main_Page.php"></a>Logo</p>
         </div>
 
         <div class="right-links">
@@ -46,7 +46,7 @@
                     <p>Profile Updated!</p>
                   </div> <br>";
 
-                    echo"<a href='Home.php'><button class='btn'>Login in now</button>";
+                    echo"<a href='Main_Page.php'><button class='btn'>Login in now</button>";
                     }
                 }else{
                     $id = $_SESSION['id'];
