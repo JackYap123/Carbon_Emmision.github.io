@@ -47,9 +47,9 @@
     </style>
   </head>
   <body>
-    <link rel="stylesheet" href="style_1.css" />
+    <link rel="stylesheet" href="css/style_1.css" />
     <div>
-      <link rel="stylesheet" href="index.css" />
+      <link rel="stylesheet" href="css/index.css" />
 
       <div class="home-container">
         <div class="home-header">
