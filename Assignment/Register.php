@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Login_Page_User.css">
+    <link rel="stylesheet" href="css/Login_Page_User.css">
     <link rel="javascript" href="register_rules.js">
     <title>Register</title>
 </head>
