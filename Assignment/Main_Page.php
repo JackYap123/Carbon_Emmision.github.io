@@ -60,11 +60,11 @@
             <span class="logo">Carbon Emmision</span>
             <div data-thq="thq-navbar-nav" class="home-desktop-menu">
               <nav class="home-links">
-                <span class="bodySmall">Home</span>
-                <span class="home-nav22 bodySmall">Features</span>
-                <span class="home-nav32 bodySmall">Calculate</span>
-                <span class="home-nav42 bodySmall">Challenges</span>
-                <span class="home-nav52 bodySmall">Learn</span>
+                <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
+                <a href=""><span class="home-nav22 bodySmall">Features</span></a>
+                <a href=""><span class="home-nav32 bodySmall">Calculate</span></a>
+                <a href=""><span class="home-nav42 bodySmall">Challenges</span></a>
+                <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
               </nav>
               <div class="home-buttons">
                 <button class="home-login buttonFlat">Login</button>
@@ -95,17 +95,6 @@
                       ></path>
                     </svg>
                   </div>
-                </div>
-                <nav class="home-links1">
-                  <a href="Main_Page.php" class="home-nav121 bodySmall">Home</a>
-                  <a href="Testing_Page.php" class="home-nav221 bodySmall">Features</a>
-                  <a href="" class="home-nav321 bodySmall">Calculate</a>
-                  <a href="" class="home-nav421 bodySmall">Challenges</a>
-                  <a href="" class="home-nav521 bodySmall">Learn</a>
-                </nav>
-                <div class="home-buttons1">
-                  <button class="buttonFlat">Login</button>
-                  <button class="buttonFilled">Register</button>
                 </div>
               </div>
               <div>
