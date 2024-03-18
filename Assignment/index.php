@@ -62,7 +62,7 @@
               <nav class="home-links">
                 <span class="bodySmall">Home</span>
                 <span class="home-nav22 bodySmall">Features</span>
-                <span class="home-nav32 bodySmall">Calculate</span>
+                <span class="home-nav32 bodySmall"><a href="carbon_Calculator.php">Calculate</a></span>
                 <span class="home-nav42 bodySmall">Challenges</span>
                 <span class="home-nav52 bodySmall">Learn</span>
               </nav>
