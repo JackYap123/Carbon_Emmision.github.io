@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,15 +25,15 @@
 
     ?>
 
-<div class="home-header">
+<div class="home-header" style="margin-top:0%;">
         <header data-thq="thq-navbar" class="navbarContainer home-navbar-interactive">
           <span class="logo">Carbon Emmision</span>
-          <div data-thq="thq-navbar-nav" class="home-desktop-menu">
+          <div data-thq="thq-navbar-nav" class="home-desktop-menu" >
             <nav class="home-links">
               <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
               <a href=""><span class="home-nav22 bodySmall">Features</span></a>
               <a href="calculator(draft).php"><span class="home-nav32 bodySmall">Calculate</span></a>
-              <a href=""><span class="home-nav42 bodySmall">Challenges</span></a>
+              <a href=""><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
               <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
             </nav>
             <div class="home-buttons">

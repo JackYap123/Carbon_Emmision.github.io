@@ -15,6 +15,7 @@
         <div class="box form-box">
             <?php
             include_once("php/config.php");
+
             if (isset($_POST['submit'])) {
                 $email = mysqli_real_escape_string($con, $_POST['email']);
                 $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -48,9 +49,8 @@
                     <div class="field input">
                         <label for="password">Password <i class="bx bx-lock-alt icon"></i></label>
                         <input type="password" name="password" id="password" autocomplete="off" required>
-                        
-                    </div>
 
+                    </div>
                     <div class="field">
                         <input type="submit" name="submit" value="Login" class="btn" required>
                     </div>
@@ -58,7 +58,7 @@
                         Don't have account? <a href="register.php">Sign Up New Account</a>
                     </div>
                 </form>
-            </div>
+        </div>
     <?php } ?>
     </div>
 </body>
