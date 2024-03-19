@@ -142,10 +142,10 @@ if (!isset($_SESSION['valid'])) {
 
 <body>
 
-<?php
-      include_once('php/config.php');
-?>
-  
+  <?php
+  include_once('php/config.php');
+  ?>
+
 
   <link rel="stylesheet" href="css/style_1.css" />
   <link rel="stylesheet" href="css/index.css" />
