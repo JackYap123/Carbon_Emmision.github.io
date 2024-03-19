@@ -166,7 +166,7 @@
               <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
             </nav>
             <div class="home-buttons">
-              <button class="home-login buttonFlat">Login</button>
+              <img src="Image/profile_Picture.jpg" class="home-login buttonFlat"></img>
               <button class="buttonFilled">Register</button>
             </div>
           </div>
