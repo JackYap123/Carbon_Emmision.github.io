@@ -185,6 +185,7 @@
   gap: var(--dl-space-space-oneandhalfunits);
   display: flex;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   justify-content: flex-start;
 }

@@ -10,7 +10,7 @@
     --black-color:#000000;
 }
 body{
-    background-image: url(backgroundSmoke.gif);
+    background-image: url(/Assignment/Image/backgroundSmoke.gif);
     background-position:center;
     background-size: cover;
 }
