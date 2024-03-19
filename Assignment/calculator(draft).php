@@ -1,12 +1,5 @@
 <?php
-    session_start();
-
-    include_once("php/config.php");
-    if(!isset($_SESSION['valid']))
-    {
-        header("Location:Login_Page_User.php");
-    }
-
+  include_once("php/config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -142,10 +135,6 @@
 </head>
 
 <body>
-  <?php
-    include_once('php/config.php');
-  ?>
-
   <link rel="stylesheet" href="css/style_1.css" />
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css" integrity="sha256-F3Xeb7IIFr1QsWD113kV2JXaEbjhsfpgrKkwZFGIA4E=" crossorigin="anonymous" />
@@ -166,7 +155,7 @@
             <nav class="home-links">
               <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
               <a href=""><span class="home-nav22 bodySmall">Features</span></a>
-              <a href="calculator(draft).php"><span class="home-nav32 bodySmall">Calculate</span></a>
+              <a href="carbon_Calculator.php"><span class="home-nav32 bodySmall">Calculate</span></a>
               <a href=""><span class="home-nav42 bodySmall">Challenges</span></a>
               <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
             </nav>
