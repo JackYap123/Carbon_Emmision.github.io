@@ -155,7 +155,7 @@
             <nav class="home-links">
               <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
               <a href=""><span class="home-nav22 bodySmall">Features</span></a>
-              <a href="carbon_Calculator.php"><span class="home-nav32 bodySmall">Calculate</span></a>
+              <a href="calculator(draft).php"><span class="home-nav32 bodySmall">Calculate</span></a>
               <a href=""><span class="home-nav42 bodySmall">Challenges</span></a>
               <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
             </nav>
@@ -196,14 +196,10 @@
         <div class="heroContainer home-hero1">
           <div class="home-container1">
             <h1 class="home-hero-heading heading1">
-              Track Your Carbon Footprint
+              Calculate Your Carbon Footprint
             </h1>
-            <span class="home-hero-sub-heading bodyLarge">
-              <span>Empowering you to make a difference</span>
-            </span>
             <div class="home-btn-group">
               <a href=""><button class="buttonFilled">Get Started</button></a>
-              <button class="buttonFlat">Learn More&nbsp;→</button>
             </div>
           </div>
         </div>
@@ -212,14 +208,9 @@
         <div class="featuresContainer">
           <div class="home-features1">
             <div class="home-container2">
-              <span class="overline">
-                <span>features</span>
-                <br />
-              </span>
-              <h2 class="home-features-heading heading2">Key Features</h2>
+              <h2 class="home-features-heading heading2">Carbon Calculator</h2>
               <span class="home-features-sub-heading bodyLarge">
-                Discover the powerful features that make our app stand
-                outs
+                Enter Your Information To Calculate the Carbon Emmision
               </span>
             </div>
             <div class="home-container3">
