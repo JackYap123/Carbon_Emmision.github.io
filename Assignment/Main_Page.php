@@ -1,9 +1,12 @@
 <?php
-  include_once("php/config.php");
-  if(!isset($_SESSION['valid']))
-  {
-      header("Location:Login_Page_User.php");
-  }
+    session_start();
+
+    include_once("php/config.php");
+    if(!isset($_SESSION['valid']))
+    {
+        header("Location:Login_Page_User.php");
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -140,7 +143,6 @@
 
 <body>
   <?php
-    include_once('Header.php');
     include_once('php/config.php');
   ?>
 
