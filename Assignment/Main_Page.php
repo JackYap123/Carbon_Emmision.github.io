@@ -1,11 +1,10 @@
 <?php
-session_start();
+  session_start();
 
-include_once("php/config.php");
-if (!isset($_SESSION['valid'])) {
-  header("Location:Login_Page_User.php");
-}
-
+  include_once("php/config.php");
+  if (!isset($_SESSION['valid'])) {
+    header("Location:Login_Page_User.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -154,7 +153,7 @@ if (!isset($_SESSION['valid'])) {
     <link rel="stylesheet" href="css/index.css" />
     <div class="home-container">
       <?php
-      include_once('Header.php');
+        include_once('Header.php');
       ?>
       <div class="home-hero">
         <div class="heroContainer home-hero1">
