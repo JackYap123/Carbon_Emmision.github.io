@@ -142,10 +142,6 @@
 </head>
 
 <body>
-  <?php
-    include_once('php/config.php');
-  ?>
-
   <link rel="stylesheet" href="css/style_1.css" />
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css" integrity="sha256-F3Xeb7IIFr1QsWD113kV2JXaEbjhsfpgrKkwZFGIA4E=" crossorigin="anonymous" />
