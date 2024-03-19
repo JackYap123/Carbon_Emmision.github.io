@@ -58,8 +58,6 @@
                         Don't have account? <a href="register.php">Sign Up New Account</a>
                     </div>
                 </form>
-
-                <a href="forgot_Password.php">Forgot Password?</a>
         </div>
     <?php } ?>
     </div>

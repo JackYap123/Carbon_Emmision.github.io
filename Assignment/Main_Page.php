@@ -161,6 +161,7 @@ if (!isset($_SESSION['valid'])) {
     <div class="home-container">
       <?php
       include_once('Header.php');
+      include_once('php/config.php');
       ?>
       <div class="home-hero">
         <div class="heroContainer home-hero1">
