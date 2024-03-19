@@ -58,7 +58,7 @@
                         Don't have account? <a href="register.php">Sign Up New Account</a>
                     </div>
                 </form>
-        </div>
+            </div>
     <?php } ?>
     </div>
 </body>
