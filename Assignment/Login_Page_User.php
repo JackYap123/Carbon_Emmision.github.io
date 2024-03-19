@@ -36,7 +36,7 @@
                     echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";
                 }
                 if (isset($_SESSION['valid'])) {
-                    header("Location: index.php");
+                    header("Location: Main_Page.php");
                 }
             } else {
             ?>
