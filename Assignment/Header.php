@@ -1,3 +1,6 @@
+<?php
+  include("../Assignment/php/config.php")
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,11 +9,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="icon" type="image/png" href="logo_Of_Carbon.png">
+  <link rel="stylesheet" href="css/style_1.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css" integrity="sha256-F3Xeb7IIFr1QsWD113kV2JXaEbjhsfpgrKkwZFGIA4E=" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
 <?php
-
+    session_start();
     $id = $_SESSION['id'];
     $query = mysqli_query($con,"SELECT*FROM users WHERE Id = $id");
     while($result = mysqli_fetch_assoc($query))
@@ -21,7 +30,6 @@
         $res_id = $result['Id'];
 
     }
-        echo "<a href = 'User_Edit_Profile.php?Id = $res_id'>Change Profile</a>"
 
     ?>
 
@@ -33,7 +41,7 @@
               <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
               <a href=""><span class="home-nav22 bodySmall">Features</span></a>
               <a href="calculator(draft).php"><span class="home-nav32 bodySmall">Calculate</span></a>
-              <a href=""><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
+              <a href="../Assignment/test.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
               <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
             </nav>
             <div class="home-buttons">

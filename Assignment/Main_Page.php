@@ -1,9 +1,9 @@
 <?php
-  session_start();
-  include_once('php/config.php');
-  if (!isset($_SESSION['valid'])) {
-    header("Location:Login_Page_User.php");
-  }
+session_start();
+include_once('php/config.php');
+if (!isset($_SESSION['valid'])) {
+  header("Location:Login_Page_User.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
-
   <style data-tag="reset-style-sheet">
     html {
       line-height: 1.15;
@@ -139,8 +138,6 @@
 </head>
 
 <body>
-  <link rel="stylesheet" href="css/style_1.css" />
-  <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.2.0/css/ionicons.min.css" integrity="sha256-F3Xeb7IIFr1QsWD113kV2JXaEbjhsfpgrKkwZFGIA4E=" crossorigin="anonymous" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -152,7 +149,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <div class="home-container">
       <?php
-        include_once('Header.php');
+      include_once('Header.php');
       ?>
       <div class="home-hero">
         <div class="heroContainer home-hero1">

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,40 +10,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
         
         <!-- title of site -->
         <title>Directory Landing Page</title>
 
 
 		<!--flaticon.css-->
-        <link rel="stylesheet" href="assets/css/flaticon.css">
+        <link rel="stylesheet" href="/Assignment/html/assets/css/flaticon.css">
 
 
         <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Assignment/html/assets/css/bootstrap.min.css">
 		
 		<!-- bootsnav -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+		<link rel="stylesheet" href="/Assignment/html/assets/css/bootsnav.css" >	
         
         <!--style.css-->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="/Assignment/html/assets/css/style.css">
         
   
     <title>Document</title>
 </head>
 
 <body>
+    <?php
+        include_once("Header.php");
+    ?>
     <section id="list-topics" class="list-topics">
         <div class="container" style="margin-top: 150px;">
             <div class="list-topics-content">
                 <ul>
                     <li>
-                        <div class="single-list-topics-content">
+                        <button class="single-list-topics-content" id="button1">
                             <div>
                                 <i class="fa-solid fa-utensils" aria-hidden="true"></i>      
                             </div>                     
                             <h2><a href="#">Food</a></h2>
-                        </div>
+                        </button>
                     </li>
                     <li>
                         <div class="single-list-topics-content">
@@ -81,6 +86,21 @@
         </div><!--/.container-->
 
     </section><!--/.list-topics-->
+    <script>
+        var button1 = document.getElementById("button1");
+        var button2 = document.getElementById("button2");
+        var button3 = document.getElementById("button3");
+        var button4 = document.getElementById("button4");
+        var button5 = document.getElementById("button5");
+
+
+        button1.addEventListener("click",function(){
+            window.location.href = "daily_log.php";
+        });
+
+        
+    </script>
+
 
    
     
