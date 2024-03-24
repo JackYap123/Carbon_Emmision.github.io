@@ -10,6 +10,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="Login_Page_User.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="nav">
         <div class="logo">
@@ -62,25 +64,28 @@
             <form action="" method="post">
                 <div class="field input">
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" value="<?php echo $res_Uname;?>" autocomplete="off" required>
+                    <input type="text" name="username" id="username" value="<?php echo $res_Uname;?>" autocomplete="off"
+                        required>
                 </div>
 
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" value="<?php echo $res_Email;?>"autocomplete="off" required>
+                    <input type="text" name="email" id="email" value="<?php echo $res_Email;?>" autocomplete="off"
+                        required>
                 </div>
-                
+
                 <div class="field input">
                     <label for="age">Age</label>
                     <input type="number" name="age" id="age" value="<?php echo $res_Age;?>" autocomplete="off" required>
                 </div>
-    
+
                 <div class="field">
                     <input type="submit" name="submit" value="Update" class="btn" required>
                 </div>
             </form>
         </div>
         <?php } ?>
-        </div>
+    </div>
 </body>
+
 </html>
