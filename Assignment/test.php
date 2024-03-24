@@ -50,36 +50,36 @@
                         </button>
                     </li>
                     <li>
-                        <div class="single-list-topics-content">
+                        <button class="single-list-topics-content" id="button2">
                             <div class="single-list-topics-icon">
                                 <i class="flaticon-travel"></i>
                             </div>
                             <h2><a href="#">Breakfast</a></h2>
-                        </div>
+                        </button>
                     </li>
                     <li>
-                        <div class="single-list-topics-content">
+                        <button class="single-list-topics-content" id="button3">
                             <div class="single-list-topics-icon">
                                 <i class="flaticon-building"></i>
                             </div>
                             <h2><a href="#">Lunch</a></h2>
-                        </div>
+                        </button>
                     </li>
                     <li>
-                        <div class="single-list-topics-content">
+                        <button class="single-list-topics-content" id="button4">
                             <div class="single-list-topics-icon">
                                 <i class="flaticon-pills"></i>
                             </div>
                             <h2><a href="#">Dinner</a></h2>
-                        </div>
+                        </button>
                     </li>
                     <li>
-                        <div class="single-list-topics-content">
+                        <button class="single-list-topics-content" id="button5">
                             <div class="single-list-topics-icon">
                                 <i class="flaticon-transport"></i>
                             </div>
                             <h2><a href="#">Other</a></h2>
-                        </div>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -90,13 +90,18 @@
         var button1 = document.getElementById("button1");
         var button2 = document.getElementById("button2");
         var button3 = document.getElementById("button3");
-        var button4 = document.getElementById("button4");
-        var button5 = document.getElementById("button5");
-
+       
 
         button1.addEventListener("click",function(){
-            window.location.href = "daily_log.php";
+            window.location.href = "daily_log_food.php";
         });
+        button2.addEventListener("click",function(){
+            window.location.href = "daily_log_car.php";
+        });
+        button3.addEventListener("click",function(){
+            window.location.href = "daily_log_trash.php";
+        });
+       
 
         
     </script>
