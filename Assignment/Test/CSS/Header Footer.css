@@ -2,9 +2,15 @@
     font-family: "Roboto", sans-serif;
 }
 
-header, body, pre{
+header, body{
     margin: 0;
     padding: 0;
+}
+
+footer {
+    background-color: #faf9ef;
+    height: 7.5vh;
+    width: 100%;
 }
 
 header {
