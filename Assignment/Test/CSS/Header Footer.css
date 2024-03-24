@@ -1,0 +1,47 @@
+header {
+    background-color: #faf9ef;
+}
+
+button {
+    background: #788353;
+    color: #ffffff;
+    border: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Ensure the link color inherits from its parent */
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space between */
+    align-items: center; /* Vertically center align items */
+}
+
+.navi {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.left {
+    justify-content: flex-start; /* Align content to the start (left) */
+}
+
+.middle {
+    display: flex;
+    justify-content: center; /* Align links to the center */
+    flex-grow: 1;
+}
+
+.right {
+    justify-content: flex-end;
+}
