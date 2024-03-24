@@ -13,7 +13,6 @@
 
     <button type="button" class="btn btn-success" id="shareButton">Share Your Achievement</button>
 
-    <!-- Share Modal (Manual Handling) -->
     <div id="shareModal" class="modal" tabindex="-1" role="dialog" style="display:none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
