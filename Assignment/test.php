@@ -37,15 +37,15 @@
     <?php
         include_once("Header.php");
     ?>
-    <section id="list-topics" class="list-topics">
+    <!-- <section id="list-topics" class="list-topics">
         <div class="container" style="margin-top: 150px;">
             <div class="list-topics-content">
                 <ul>
                     <li>
                         <button class="single-list-topics-content" id="button1">
-                            <div>
-                                <i class="fa-solid fa-utensils" aria-hidden="true"></i>      
-                            </div>                     
+                            <div class="single-list-topics-icon">
+                                <i class="flaticon-restaurant"></i>       
+                            </div>         
                             <h2><a href="#">Food</a></h2>
                         </button>
                     </li>
@@ -83,10 +83,10 @@
                     </li>
                 </ul>
             </div>
-        </div><!--/.container-->
+        </div>
 
-    </section><!--/.list-topics-->
-    <script>
+    </section> -->
+    <!-- <script>
         var button1 = document.getElementById("button1");
         var button2 = document.getElementById("button2");
         var button3 = document.getElementById("button3");
@@ -104,7 +104,7 @@
        
 
         
-    </script>
+    </script> -->
 
 
    

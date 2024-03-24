@@ -114,7 +114,6 @@ if (!isset($_SESSION['valid'])) {
       text-decoration: none;
       text-transform: none;
       letter-spacing: normal;
-      line-height: 1.15;
       color: var(--dl-color-gray-black);
       background-color: var(--dl-color-gray-white);
 

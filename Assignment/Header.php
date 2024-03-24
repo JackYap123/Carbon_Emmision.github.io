@@ -7,7 +7,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
   <link rel="icon" type="image/png" href="logo_Of_Carbon.png">
   <link rel="stylesheet" href="css/style_1.css" />
   <link rel="stylesheet" href="css/index.css" />
@@ -19,7 +18,6 @@
 <body>
 
 <?php
-    session_start();
     $id = $_SESSION['id'];
     $query = mysqli_query($con,"SELECT*FROM users WHERE Id = $id");
     while($result = mysqli_fetch_assoc($query))
@@ -41,8 +39,8 @@
               <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
               <a href=""><span class="home-nav22 bodySmall">Features</span></a>
               <a href="calculator(draft).php"><span class="home-nav32 bodySmall">Calculate</span></a>
-              <a href="../Assignment/test.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
-              <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
+              <a href="../Assignment/daily_log_food.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
+              <a href=""><span class="home-nav52 bodySmall">Historical</span></a>
             </nav>
             <div class="home-buttons">
               <img src="Image/profile_Picture.jpg" style="width:50px; height: 50px">
