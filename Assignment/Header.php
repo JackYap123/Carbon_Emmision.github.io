@@ -34,13 +34,13 @@
 <div class="home-header" style="margin-top:0%;">
         <header data-thq="thq-navbar" class="navbarContainer home-navbar-interactive">
           <span class="logo">Carbon Emmision</span>
-          <div data-thq="thq-navbar-nav" class="home-desktop-menu" >
+          <div data-thq="thq-navbar-nav" class="home-desktop-menu">
             <nav class="home-links">
               <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
               <a href=""><span class="home-nav22 bodySmall">Features</span></a>
               <a href="calculator(draft).php"><span class="home-nav32 bodySmall">Calculate</span></a>
-              <a href="../Assignment/daily_log_food.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
-              <a href=""><span class="home-nav52 bodySmall">Historical</span></a>
+              <a href="../Assignment/test.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
+              <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
             </nav>
             <div class="home-buttons">
               <img src="Image/profile_Picture.jpg" style="width:50px; height: 50px">
