@@ -1,0 +1,15 @@
+.container1 {
+    display: grid;
+    margin: 1;
+    place-items: center;
+}
+
+#title {
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+.content {
+    margin: 0.1em;
+    font-family: "Roboto Thin", sans-serif;
+}

@@ -7,16 +7,9 @@ header, body{
     padding: 0;
 }
 
-footer {
-    background-color: #faf9ef;
-    height: 7.5vh;
-    width: 100%;
-}
-
 header {
     background-color: #faf9ef;
     position: fixed;
-    height: 7.5vh;
     display: grid;
     place-items: center;
     width: 100%;
@@ -48,6 +41,7 @@ a {
 
 .container {
     display: flex;
+    height: 5em;
     width: 100%;
     max-width: 100%;
 }
