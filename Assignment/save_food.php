@@ -151,17 +151,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'LRT':
                     $type_number = 60;
                     break;
+                default:
+                    break;
             }
             $transport_total = ($type_number * $drive_distance)/1000;
             break;
+        default:
+            break;
     }
+    
+    $Total_KHW = $average_kwh * $time_span_months;
+    $Total_Time_Span = $carbon_intensity * $average_kwh * $time_span_months;
+    $Total_Time_Span_Month = $Total_Time_Span / $time_span_months;
+
 
     // Insert data into the database
-    $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total)
-        VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total')";
+    $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total, Total_KHW, Total_Time_Span, Total_Time_Span_Month)
+        VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total','$Total_KHW', '$Total_Time_Span', '$Total_Time_Span_Month')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        header("Location: Main_Page.php");
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
