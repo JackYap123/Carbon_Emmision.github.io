@@ -10,9 +10,9 @@
 </head>
 
 <body>
-
+    <!-- this button just tests if the modal pop up correctly. Later, i'll make a change. -->
+    <!-- Modal will be pop up when the user achieve the certain point of the carbon emission. -->
     <button type="button" class="btn btn-success" id="shareButton">Share Your Achievement</button>
-
     <div id="shareModal" class="modal" tabindex="-1" role="dialog" style="display:none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
