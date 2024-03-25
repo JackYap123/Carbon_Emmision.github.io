@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $road_number = 100;
                     break;
             }
-            $transport_total = (($type_number * $drive_distance) + ($gas_number * $drive_distance) + ($road_type * $drive_distance))/1000;
+            $transport_total = (($type_number * $drive_distance) + ($gas_number * $drive_distance) + ($road_number * $drive_distance)) / 1000;
             break;
         case 'Motorcycle':
             switch ($motor_type) {
@@ -138,9 +138,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $road_number = 100;
                     break;
             }
-            $transport_total = (($type_number * $drive_distance) + ($motor_gas * $drive_distance) + ($road_type * $drive_distance))/1000;
+            $transport_total = (($type_number * $drive_distance) + ($motor_gas * $drive_distance) + ($road_type * $drive_distance)) / 1000;
             break;
-        case 'Public Transport':
+        case 'Public-Transport':
             switch ($public_transport_type) {
                 case 'Bus':
                     $type_number = 150;
@@ -152,10 +152,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $type_number = 60;
                     break;
             }
-            $transport_total = (($type_number * $drive_distance))/1000;
-        break;
+            $transport_total = ($type_number * $drive_distance);
+            break;
     }
-    
+
     // Insert data into the database
     $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total)
         VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total')";
@@ -169,3 +169,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close database connection
     $conn->close();
 }
+?>

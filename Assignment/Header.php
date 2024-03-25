@@ -39,7 +39,7 @@
               <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
               <a href=""><span class="home-nav22 bodySmall">Features</span></a>
               <a href="calculator(draft).php"><span class="home-nav32 bodySmall">Calculate</span></a>
-              <a href="../Assignment/test.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
+              <a href="../Assignment/daily_log_food.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
               <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
             </nav>
             <div class="home-buttons">
