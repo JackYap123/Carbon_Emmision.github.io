@@ -152,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $type_number = 60;
                     break;
             }
-            $transport_total = ($type_number * $drive_distance);
+            $transport_total = ($type_number * $drive_distance)/1000;
             break;
     }
 
