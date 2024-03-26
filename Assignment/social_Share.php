@@ -17,12 +17,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Share Your Achievement</h5>
+                    <h1 class="text-success">Congratulations!</h1>
                     <button type="button" class="close" id="closeModal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
+                    <p> You have reduced the carbon emissions by 25%.</p>
+
+                    <h5 class="modal-title">Share Your Achievement</h5>
                     <select class="form-control" id="captionTemplate">
                         <option selected>Choose a caption...</option>
                         <option value="1">Just leveled up in carbon reduction! 🌿 #EcoChampion #Sustainability
@@ -44,6 +47,7 @@
             </div>
         </div>
     </div>
+
 
     <script>
     document.getElementById('shareButton').addEventListener('click', function() {
