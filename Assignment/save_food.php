@@ -154,12 +154,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 default:
                     break;
             }
-            $transport_total = ($type_number * $drive_distance)/1000;
+            $transport_total = ($type_number * $drive_distance) / 1000;
             break;
         default:
             break;
     }
-    
+
     $Total_KHW = $average_kwh * $time_span_months;
     $Total_Time_Span = $carbon_intensity * $average_kwh * $time_span_months;
     $Total_Time_Span_Month = $Total_Time_Span / $time_span_months;
@@ -170,7 +170,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total','$Total_KHW', '$Total_Time_Span', '$Total_Time_Span_Month')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: Main_Page.php");
+        session_start();
+
+        // Set $total_food in a session variable
+        $_SESSION['food_total'] = $food_total;
+        $_SESSION['transport_total'] = $transport_total;
+        $_SESSION['Total_KHW'] = $Total_KHW;
+        $_SESSION['Total_Time_Span'] = $Total_Time_Span;
+        $_SESSION['Total_Time_Span_Month'] = $Total_Time_Span_Month;
+
+        header("Location: historical.php?");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -179,4 +188,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close database connection
     $conn->close();
 }
-?>
