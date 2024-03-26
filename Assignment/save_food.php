@@ -37,18 +37,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $food_total = ($meat * 40) + ($vegetable * 0.3);
 
             if ($wasted_food === 'yes') {
-                $food_total += $waste * 47;
+                $food_total += ($waste * 47)/1000;
             } else {
-                $food_total += 0;
+                $food_total += 0/1000;
             }
             break;
         case 'Vegetarian':
             $food_total = ($vegetable * 0.3);
 
             if ($wasted_food === 'yes') {
-                $food_total += $waste * 10;
+                $food_total += ($waste * 10)/1000;
             } else {
-                $food_total += 0;
+                $food_total += 0/1000;
             }
             break;
     }
@@ -161,8 +161,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $Total_KHW = $average_kwh * $time_span_months;
-    $Total_Time_Span = $carbon_intensity * $average_kwh * $time_span_months;
-    $Total_Time_Span_Month = $Total_Time_Span / $time_span_months;
+    $Total_Time_Span = $carbon_intensity * $average_kwh /($time_span_months * 30);
+    $Total_Time_Span_Month = $Total_Time_Span * $time_span_months;
 
 
     // Insert data into the database
