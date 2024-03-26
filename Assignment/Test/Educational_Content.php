@@ -22,11 +22,14 @@
     </div>
     <div class="container2">
         <h2 id="title2">Educational Video</h2>
-        <div class="video-container">
+        <div class="content-container">
             <iframe src="https://www.youtube.com/embed/8q7_aV8eLUE?si=_3yFmrfeZOxX0JtN" frameborder="0" allowfullscreen></iframe>
             <iframe src="https://www.youtube.com/embed/fStmxIfwXeI?si=HgyqEqTNABSmyKfM" frameborder="0" allowfullscreen></iframe>
         </div>
-        
+        <div class="content-container">
+            <object type="text/html" data="https://www.nationalgeographic.com/environment/article/greenhouse-gases" class="articles">
+            </object>
+        </div>
     </div>
     
 </body>

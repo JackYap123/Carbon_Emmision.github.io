@@ -90,6 +90,22 @@ a {
     width: 100%vw;
 }
 
+.content-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+iframe {
+    width: 45%; 
+    height: 26.75em;
+}
+
+.articles {
+    margin-top: 2.5em;
+    width: 45%; 
+    height: 50em;
+}
+
 #title1 {
     font-size: 50px;
     margin-top: 0;
@@ -108,16 +124,6 @@ a {
     margin-bottom: 2em;
 }
 
-.video-container {
-    display: flex;
-    justify-content: space-around;
-}
-
-iframe{
-    width: 45%;
-    height: 26.75em;
-}
-
 footer {
     background-color: #faf9ef;
     height: 5em;
@@ -127,5 +133,4 @@ footer {
 
 .foot_container {
     display: grid;
-    
 }
