@@ -43,6 +43,9 @@ $conn->close();
     <div id="container" style="width: 500px;height: 500px;">
         <canvas id="myChart" width="400" height="400"></canvas>
     </div>
+    <?php
+      include_once("dashboard_table.php");
+    ?>
     <script>
         // Step 5: Render
         var ctx = document.getElementById('myChart').getContext('2d');
