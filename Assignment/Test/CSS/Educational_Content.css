@@ -27,6 +27,12 @@ button {
     font-size: 15px;
     transition: background-color 200ms ease-out;
 }
+
+.button_spacing {
+    margin-right: 0.25em; 
+    margin-left: 0.25em;
+}
+
 button:hover {
     background-color: #747d6c;
 }
@@ -139,6 +145,12 @@ iframe {
     margin-top: 2.5em;
     width: 45%; 
     height: auto;
+}
+
+#container5 {
+    background-color: #faf9ef;
+    padding-bottom: 5em;
+    padding-top: 5em;
 }
 
 footer {

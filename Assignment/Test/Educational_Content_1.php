@@ -17,42 +17,31 @@
 <body>
     <div style="height: 5em;"></div>
     <div id="container1">
-        <h1 class="head-title">Educational Content</h1>
+        <h1 class="head-title">Reduce, Reuse, Recycle</h1>
         <p class="content">Understand how our actions impact the environment</p>
-        <button id="scroll">Learn More</button>
+        <a href="Educational_Content.php"><button>Back</button></a>
     </div>
     <div id="container2">
         <h2 class="content-title">Educational Videos</h2>
         <div class="content-container">
-            <iframe src="<?php echo $url_0; ?>" frameborder="0" allowfullscreen></iframe>
-            <iframe src="<?php echo $url_1; ?>" frameborder="0" allowfullscreen></iframe>
+            <iframe src="<?php echo $url_6; ?>" frameborder="0" allowfullscreen></iframe>
+            <iframe src="<?php echo $url_7; ?>" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
     <div id="container3">
         <h2 class="content-title">Educational Articles</h2>
         <div class="content-container">
-            <object type="text/html" data="<?php echo $url_2; ?>" class="articles"></object>
-            <object type="text/html" data="<?php echo $url_3; ?>" class="articles">
-            </object>
+            <object type="text/html" data="<?php echo $url_8; ?>" class="articles"></object>
+            <object type="text/html" data="<?php echo $url_9; ?>" class="articles"></object>
         </div>
     </div>
     <div id="container4">
         <h2 class="content-title">Educational Infographics</h2>
         <div class="content-container">
-            <object data="<?php echo $url_4; ?>" type="image/png" class="infographics"></object>
-            <object data="<?php echo $url_5; ?>" type="image/png" class="infographics"></object>
+            <object data="<?php echo $url_10; ?>" type="image/png" class="infographics"></object>
+            <object data="<?php echo $url_11; ?>" type="image/png" class="infographics"></object>
         </div>
     </div>
-    <section id="Learn-More">
-        <div id="container5">
-            <h2 class="content-title">Learn More</h2>
-            <div style="display:flex; justify-content: center;">
-                <button id="button_1" class="button_spacing">Reduce, Reuse, Recycle</button>
-                <button id="button_2" class="button_spacing">Conserve Energy</button>
-                <button id="button_3" class="button_spacing">Reduce Your Carbon Footprint</button>
-            </div>
-        </div>
-    </section>
 </body>
 <script src="JS/Educational_Content.js"></script>
 </html>
