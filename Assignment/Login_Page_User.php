@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +23,8 @@
                 $email = mysqli_real_escape_string($con, $_POST['email']);
                 $password = mysqli_real_escape_string($con, $_POST['password']);
 
+                // Hash the password
+
                 $result = mysqli_query($con, "SELECT * FROM users WHERE Email= '$email' AND Password ='$password' ") or die("connection failed");
                 $row = mysqli_fetch_assoc($result);
 
@@ -31,6 +33,8 @@
                     $_SESSION['username'] = $row['UserName'];
                     $_SESSION['age'] = $row['Age'];
                     $_SESSION['id'] = $row['Id'];
+                    header("Location: Main_Page.php");
+                    exit;
                 } else {
                     echo "<div class='message'>
                             <p>Wrong Username or Password</p>
@@ -38,7 +42,6 @@
                     echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";
                 }
                 if (isset($_SESSION['valid'])) {
-                    header("Location: Main_Page.php");
                 }
             } else {
             ?>
