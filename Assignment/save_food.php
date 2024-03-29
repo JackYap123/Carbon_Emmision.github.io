@@ -186,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['Total_Time_Span_Month'] = $Total_Time_Span_Month;
 
 
-        // header("Location: historical.php?");
+        header("Location: historical.php?");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
