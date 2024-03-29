@@ -37,7 +37,6 @@
           <div data-thq="thq-navbar-nav" class="home-desktop-menu">
             <nav class="home-links">
               <a href="Main_Page.php"><span class="bodySmall">Home</span></a>
-              <a href=""><span class="home-nav22 bodySmall">Features</span></a>
               <a href="daily_log_food.php"><span class="home-nav32 bodySmall">Calculate</span></a>
               <a href="dashboard.php"><span class="home-nav32 bodySmall">Historical</span></a>
               <a href=""><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
