@@ -2,7 +2,14 @@
 include_once("php/config.php");
 session_start();
 
-$user_id = $_SESSION['user_id'];
+if (!isset($_SESSION['user_Id'])) {
+  // Redirect user to login page if not logged in
+  header("Location: Main_Page.php");
+  exit();
+}
+
+
+$user_id = $_SESSION['user_Id'];
 // Retrieve $total_food from session variable
 $food_total = $_SESSION['food_total'];
 $transport_total = $_SESSION['transport_total'];
@@ -24,7 +31,7 @@ if ($conn->connect_error) {
 }
 
 // Step 2: Query Database for the latest row
-$sql = "SELECT food_total, transport_total,Total_KHW FROM food_carbon_emission WHERE user_id = $user_id ORDER BY id DESC LIMIT 1";
+$sql = "SELECT food_total, transport_total,Total_KHW FROM food_carbon_emission WHERE user_Id = $user_id ORDER BY Id DESC LIMIT 1";
 $result = $conn->query($sql);
 
 // Step 3: Data Processing

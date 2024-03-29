@@ -18,14 +18,14 @@
 <body>
 
 <?php
-    $id = $_SESSION['id'];
-    $query = mysqli_query($con,"SELECT*FROM users WHERE Id = $id");
+    $id = $_SESSION['user_Id'];
+    $query = mysqli_query($con,"SELECT*FROM users WHERE user_Id = $id");
     while($result = mysqli_fetch_assoc($query))
     {
         $res_Uname = $result['UserName'];
         $res_Email = $result['Email'];
         $res_Age = $result['Age'];
-        $res_id = $result['Id'];
+        $res_id = $result['user_Id'];
 
     }
 
@@ -40,7 +40,7 @@
               <a href=""><span class="home-nav22 bodySmall">Features</span></a>
               <a href="calculator(draft).php"><span class="home-nav32 bodySmall">Calculate</span></a>
               <a href="dashboard.php"><span class="home-nav32 bodySmall">Historical</span></a>
-              <a href="../Assignment/daily_log_food.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
+              <a href="daily_log_food.php"><span class="home-nav42 bodySmall">Daily Activity Log</span></a>
               <a href=""><span class="home-nav52 bodySmall">Learn</span></a>
             </nav>
             <div class="home-buttons">

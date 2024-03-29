@@ -32,7 +32,7 @@ session_start();
                     $_SESSION['valid'] = $row['Email'];
                     $_SESSION['username'] = $row['UserName'];
                     $_SESSION['age'] = $row['Age'];
-                    $_SESSION['id'] = $row['Id'];
+                    $_SESSION['user_Id'] = $row['user_Id'];
                     header("Location: Main_Page.php");
                     exit;
                 } else {

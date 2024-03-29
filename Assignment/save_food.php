@@ -3,6 +3,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include_once("php/config.php");
+session_start();
+
+
+
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Establish connection to your database
@@ -163,14 +169,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Total_KHW = $average_kwh * $time_span_months;
     $Total_Time_Span = $carbon_intensity * $average_kwh /($time_span_months * 30);
     $Total_Time_Span_Month = $Total_Time_Span * $time_span_months;
+    $id = $_SESSION['user_Id'];
 
 
     // Insert data into the database
-    $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total, Total_KHW, Total_Time_Span, Total_Time_Span_Month)
-        VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total','$Total_KHW', '$Total_Time_Span', '$Total_Time_Span_Month')";
+    $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total, Total_KHW, Total_Time_Span, Total_Time_Span_Month, user_Id)
+        VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total','$Total_KHW', '$Total_Time_Span', '$Total_Time_Span_Month','$id')";
 
     if ($conn->query($sql) === TRUE) {
-        session_start();
 
         // Set $total_food in a session variable
         $_SESSION['food_total'] = $food_total;
@@ -179,7 +185,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['Total_Time_Span'] = $Total_Time_Span;
         $_SESSION['Total_Time_Span_Month'] = $Total_Time_Span_Month;
 
-        header("Location: historical.php?");
+
+        // header("Location: historical.php?");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

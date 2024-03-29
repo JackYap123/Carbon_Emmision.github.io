@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Step 1: Database Connection
 $servername = "localhost";
 $username = "root";
@@ -12,8 +13,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$id = $_SESSION['user_Id'];
+
 // Step 2: Query Database
-$sql = "SELECT food_total, transport_total, Total_KHW FROM food_carbon_emission";
+$sql = "SELECT food_total, transport_total, Total_KHW FROM food_carbon_emission WHERE user_Id = $id";
 $result = $conn->query($sql);
 
 // Step 3: Data Processing

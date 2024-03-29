@@ -27,8 +27,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$id = $_SESSION['user_Id'];
+
 // Step 2: Execute a query to fetch data
-$sql = "SELECT * FROM food_carbon_emission"; // Change "your_table" to the name of your table
+$sql = "SELECT * FROM food_carbon_emission WHERE user_Id = $id
+AND date_created >= DATE_SUB(NOW(), INTERVAL 30 DAY)"; 
+// Change "your_table" to the name of your table
 $result = $conn->query($sql);
 
 ?>
