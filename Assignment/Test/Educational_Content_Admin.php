@@ -8,6 +8,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Educational_Content</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
     <script>
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
@@ -15,30 +22,42 @@
     </script>
 </head>
 <body>
-    <H1>Educational Content Admin Page</H1>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label>Topic: </label>
-        <select name="category">
-            <option value="empty"></option>
-            <option value="main_content">Educational Content</option>
-            <option value="3R">Reduce, Reuse, Recycle</option>
-            <option value="conserve_energy">Conserve Energy</option>
-            <option value="reduce_your_carbon_footprint">Reduce Your Carbon Footprint</option>
-        </select><br>
-        <label>Resource: </label>
-        <select name="resource">
-            <option value="empty"></option>
-            <option value="video1">Video 1</option>
-            <option value="video2">Video 2</option>
-            <option value="article1">Article 1</option>
-            <option value="article2">Article 2</option>
-            <option value="infographic1">Infographic 1</option>
-            <option value="infographic2">Infographic 2</option>
-        </select><br>
-        <label>URL: </label>
-        <input type="text" name="URL">
-        <br><input type="submit" name="submit">
-    </form>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Educational Content Admin Page</h1>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <label for="category">Topic:</label>
+                <select class="form-control" name="category" id="category">
+                    <option value="empty"></option>
+                    <option value="main_content">Educational Content</option>
+                    <option value="3R">Reduce, Reuse, Recycle</option>
+                    <option value="conserve_energy">Conserve Energy</option>
+                    <option value="reduce_your_carbon_footprint">Reduce Your Carbon Footprint</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="resource">Resource:</label>
+                <select class="form-control" name="resource" id="resource">
+                    <option value="empty"></option>
+                    <option value="video1">Video 1</option>
+                    <option value="video2">Video 2</option>
+                    <option value="article1">Article 1</option>
+                    <option value="article2">Article 2</option>
+                    <option value="infographic1">Infographic 1</option>
+                    <option value="infographic2">Infographic 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="URL">URL:</label>
+                <input type="text" class="form-control" id="URL" name="URL">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS and jQuery (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
 
@@ -68,8 +87,9 @@
                     break;
             }
             mysqli_query($conn, $sql_up);
-            echo "Done";
-        }else {echo "One or more of the option/s is empty";}
+            echo "<script>alert('Form submitted successfully!');</script>";
+            
+        }else {echo "<script>alert('One or more option is empty!');</script>";}
     }
 
     function update($store, $resource, $url){
