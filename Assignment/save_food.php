@@ -43,18 +43,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $food_total = ($meat * 40) + ($vegetable * 0.3);
 
             if ($wasted_food === 'yes') {
-                $food_total += ($waste * 47)/1000;
+                $food_total += ($waste * 47) / 1000;
             } else {
-                $food_total += 0/1000;
+                $food_total += 0 / 1000;
             }
             break;
         case 'Vegetarian':
             $food_total = ($vegetable * 0.3);
 
             if ($wasted_food === 'yes') {
-                $food_total += ($waste * 10)/1000;
+                $food_total += ($waste * 10) / 1000;
             } else {
-                $food_total += 0/1000;
+                $food_total += 0 / 1000;
             }
             break;
     }
@@ -167,7 +167,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $Total_KHW = $average_kwh * $time_span_months;
-    $Total_Time_Span = $carbon_intensity * $average_kwh /($time_span_months * 30);
+    $Total_Time_Span = $carbon_intensity * $average_kwh / ($time_span_months * 30);
     $Total_Time_Span_Month = $Total_Time_Span * $time_span_months;
     $id = $_SESSION['user_Id'];
 
@@ -194,4 +194,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Close database connection
     $conn->close();
+    $user_id = $_SESSION['user_Id']; // Assuming you have a session variable for user_Id
+    $sql_check = "SELECT * FROM food_carbon_emission WHERE user_Id = $user_id";
+    $result_check = $conn->query($sql_check);
+    if ($result_check->num_rows == 0) {
+        // User's data doesn't exist, increment the notification count
+        $_SESSION['notification_count']++;
+    }
 }

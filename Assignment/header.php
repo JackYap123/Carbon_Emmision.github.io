@@ -27,7 +27,7 @@
                 <a href="Educational_Content.php" class="navi">Learn</a>
                 <span class="notification-icon">
                     <i class="fas fa-bell"></i>
-                    <span id="notification-counter" class="notification-counter">0</span>
+                    <span class="notification-counter"><?php echo isset($_SESSION['notification_count']) ? $_SESSION['notification_count'] : 0; ?></span>
                     <!-- Example: Displaying initial count -->
                 </span>
             </nav>
