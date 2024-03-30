@@ -21,11 +21,10 @@ if (!isset($_SESSION['valid'])) {
 <body>
     <div class="nav">
         <div class="logo">
-            <p><a href="Main_Page.php"></a>Logo</p>
+            <p><a href="home_page.php"></a>Logo</p>
         </div>
 
         <div class="right-links">
-            <a href="#">Change Profile</a>
             <a href="php/Logout_Page_User.php"><button class="btn">Log Out</button></a>
         </div>
     </div>
@@ -49,7 +48,7 @@ if (!isset($_SESSION['valid'])) {
                     <p>Profile Updated!</p>
                   </div> <br>";
 
-                    echo "<a href='Main_Page.php'><button class='btn'>Login in now</button>";
+                    echo "<a href='home_page.php'><button class='btn'>Login in now</button>";
                 }
             } else {
                 $id = $_SESSION['user_Id'];

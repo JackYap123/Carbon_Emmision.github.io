@@ -9,13 +9,15 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/daily_log_food.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+
     <title>Food Tracker</title>
 </head>
 
 
 <body>
     <?php
-    include_once("Header.php");
+    include_once("html/header.html");
     ?>
     <!-- Form 1 -->
     <div class="container">
@@ -222,6 +224,9 @@ session_start();
         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
     </div>
     </div>
+    <?php
+        include_once("html/footer.html");
+    ?>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="js/daily_log_food.js"></script>

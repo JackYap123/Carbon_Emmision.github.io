@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_SESSION['user_Id'])) {
   // Redirect user to login page if not logged in
-  header("Location: Main_Page.php");
+  header("Location: home_pages.php");
   exit();
 }
 
@@ -42,6 +42,7 @@ $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,9 +50,11 @@ $conn->close();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/historical.css">
+  <link rel="stylesheet" href="css/header_footer.css">
+
   <?php
-  include_once("Header.php") ;
-?>
+  include_once("html/Header.html");
+  ?>
 </head>
 
 <body>
@@ -103,12 +106,12 @@ $conn->close();
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ["Food Total", "Transport Total","Total KHW"],
+        labels: ["Food Total", "Transport Total", "Total KHW"],
         datasets: [{
           label: 'Latest Data',
           data: <?php echo json_encode([$latestData['food_total'], $latestData['transport_total'], $latestData['Total_KHW']]); ?>,
           backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(11,156,49,0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)','rgba(11,156,49,0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(11,156,49,0.2)'],
           borderWidth: 1
         }]
       },
