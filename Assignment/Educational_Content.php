@@ -1,6 +1,6 @@
 <?php
-    include "database.php";
-    include "HeaderFooter/Header.html";
+    include_once "php/config.php";
+    include_once "html/header.html";
 ?>
 
 <!DOCTYPE html>

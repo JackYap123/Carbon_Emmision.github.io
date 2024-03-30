@@ -3,10 +3,10 @@
     $db_user = "root";
     $db_pass = "";
     $db_name = "carbon_emmision";
-    $conn = "";
+    $con = "";
 
     try {
-        $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
+        $con = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
     } catch (mysqli_sql_exception) {
         echo"Could not connect!!!";
     }
@@ -38,7 +38,7 @@
 
     for ($i=0; $i < 24; $i++) { 
         $sql = "SELECT * FROM educational_content WHERE id =" . ($i + 1);
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($con, $sql);
         $row = mysqli_fetch_assoc($result);
         ${"url_" . $i} = $row['url'];
     }
