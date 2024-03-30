@@ -10,7 +10,7 @@ if ($con->connect_error) {
 try {
     // Check if there has been a submission in the past day
     $yesterday = date('Y-m-d H:i:s', strtotime('-1 day'));
-    $sql = "SELECT COUNT(*) AS count FROM food_carbon_submissions WHERE submission_time > '$yesterday'";
+    $sql = "SELECT COUNT(*) AS count FROM food_carbon_emission WHERE submission_time > '$yesterday'";
     $result = $con->query($sql);
 
     if ($result === false) {
