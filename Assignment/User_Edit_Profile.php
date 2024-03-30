@@ -37,10 +37,12 @@ if (!isset($_SESSION['valid'])) {
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $age = $_POST['age'];
+                $commuting_method =  $_POST['communting-method'];
+                $food =  $_POST['food'];
+                $energy =  $_POST['energy'];
+                $id = $_SESSION['user_Id'];
 
-                $id = $_SESSION['id'];
-
-                $edit_query = mysqli_query($con, "UPDATE users SET UserName='$username',Email='$email',Age='$age' WHERE Id = $id") or die("error occures");
+                $edit_query = mysqli_query($con, "UPDATE users SET UserName='$username',Email='$email',Age='$age' WHERE user_Id = $id") or die("error occures");
 
                 if ($edit_query) {
                     echo "<div class='message'>
@@ -57,6 +59,9 @@ if (!isset($_SESSION['valid'])) {
                     $res_Uname = $result['UserName'];
                     $res_Email = $result['Email'];
                     $res_Age = $result['Age'];
+                    $res_Food = $result['Food'];
+                    $res_Method = $result['Commuting_Method'];
+                    $res_Energy = $result['Energy'];
                 }
             ?>
                 <header>Change Profile</header>
@@ -76,20 +81,35 @@ if (!isset($_SESSION['valid'])) {
                         <input type="number" name="age" id="age" value="<?php echo $res_Age; ?>" autocomplete="off" required>
                     </div>
 
-                    
+
                     <div class="field input">
-                        <label for="commuting-method">Commuting-Method</label>
-                        <input type="text" name="commuting-method" id="commuting-method" autocomplete="new-password" required>
+                        <label for="commuting-method">Commuting Method</label>
+                        <input type="text" name="age" id="age" value="<?php echo $res_Method; ?>" autocomplete="off" required>
+
+                        <select id="commuting-method" name="commuting-method">
+                            <option value=""><?php echo $res_Method; ?></option>
+                            <option value="Car">Car</option>
+                            <option value="Motorcycle">Motorcycle</option>
+                            <option value="Public-Transport">Public Transport</option>
+                        </select>
                     </div>
 
                     <div class="field input">
                         <label for="energy">Energy</label>
-                        <input type="text" name="energy" id="energy" autocomplete="new-password" required>
+                        <select id="energy" name="energy">
+                            <option value="<?php echo $res_Energy; ?>"></option>
+                            <option value="Fan">Fan</option>
+                            <option value="Air-Condition">Air-Condition</option>
+                        </select>
                     </div>
 
                     <div class="field input">
-                        <label for="food">Food</label>
-                        <input type="text" name="food" id="food" autocomplete="new-password" required>
+                        <label for="food">Energy</label>
+                        <select id="food" name="food">
+                            <option><?php echo $res_Food; ?></option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                        </select>
                     </div>
 
                     <div class="field">

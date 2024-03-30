@@ -45,7 +45,7 @@
             <div class="home-buttons">
               <img src="Image/profile_Picture.jpg" style="width:50px; height: 50px">
               <button class="home-login buttonFlat"><?php echo "Name :" . $res_Uname . " Age :" . $res_Age; ?></button>
-              <button class="buttonFilled"><?php echo "<a href='User_Edit_Profile.php?Id = $res_id'>Profile<a/>"?></button>
+              <button class="buttonFilled"><?php echo "<a href='User_Edit_Profile.php?user_Id = $res_id'>Profile<a/>"?></button>
             </div>
           </div>
           <div data-thq="thq-burger-menu" class="home-burger-menu">
