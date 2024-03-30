@@ -33,7 +33,7 @@
 
                     echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button>";
                 } else {
-                    $insert_query = mysqli_query($con, "INSERT INTO users (Username, Email, Age, Password, food, commuting_method, energy) VALUES ('$username', '$email', '$age', '$password', '$food', '$commuting_method', '$energy')") or die("Error Occupied");
+                    mysqli_query($con, "INSERT INTO users (Username, Email, Age, Password, food, commuting_method, energy) VALUES ('$username', '$email', '$age', '$password', '$food', '$commuting_method', '$energy')") or die("Error Occupied");
 
                     echo "<div class='message'>
                     <p> Resgitration Successfully</p>
@@ -56,23 +56,41 @@
                     </div>
 
                     <div class="field input">
+                        <label for="password">Password</label>
+                        <input type="text" name="password" id="password" autocomplete="new-password" required>
+                    </div>
+
+                    <div class="field input">
                         <label for="age">Age</label>
                         <input type="number" name="age" id="age" autocomplete="new-password" required>
                     </div>
 
                     <div class="field input">
                         <label for="commuting-method">Commuting-Method</label>
-                        <input type="text" name="commuting-method" id="commuting-method" autocomplete="new-password" required>
+                        <select id="commuting-method" name="commuting-method">
+                            <option>Please Select Your Transpotation</option>
+                            <option value="Car">Car</option>
+                            <option value="Motorcycle">Motorcycle</option>
+                            <option value="Public-Transport">Public Transport</option>
+                        </select>
                     </div>
 
                     <div class="field input">
                         <label for="energy">Energy</label>
-                        <input type="text" name="energy" id="energy" autocomplete="new-password" required>
+                        <select id="energy" name="energy">
+                            <option>Please Select Your Transpotation</option>
+                            <option value="Fan">Fan</option>
+                            <option value="Air-Condition">Air-Condition</option>
+                        </select>
                     </div>
 
                     <div class="field input">
                         <label for="food">Food</label>
-                        <input type="text" name="food" id="food" autocomplete="new-password" required>
+                        <select id="food" name="food">
+                            <option>Please Select Your Diet</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                        </select>
                     </div>
 
                     <div class="field">

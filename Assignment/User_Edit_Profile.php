@@ -75,6 +75,8 @@ if (!isset($_SESSION['valid'])) {
                         <label for="age">Age</label>
                         <input type="number" name="age" id="age" value="<?php echo $res_Age; ?>" autocomplete="off" required>
                     </div>
+
+                    
                     <div class="field input">
                         <label for="commuting-method">Commuting-Method</label>
                         <input type="text" name="commuting-method" id="commuting-method" autocomplete="new-password" required>
