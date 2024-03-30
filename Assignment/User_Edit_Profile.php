@@ -37,12 +37,12 @@ if (!isset($_SESSION['valid'])) {
                 $username = $_POST['username'];
                 $email = $_POST['email'];
                 $age = $_POST['age'];
-                $commuting_method =  $_POST['communting-method'];
+                $commuting_method =  $_POST['commuting-method'];
                 $food =  $_POST['food'];
                 $energy =  $_POST['energy'];
                 $id = $_SESSION['user_Id'];
 
-                $edit_query = mysqli_query($con, "UPDATE users SET UserName='$username',Email='$email',Age='$age' WHERE user_Id = $id") or die("error occures");
+                $edit_query = mysqli_query($con, "UPDATE users SET UserName='$username',Email='$email',Age='$age',Food='$food',Energy = '$energy',Commuting_Method = '$commuting_method' WHERE user_Id = $id") or die("error occures");
 
                 if ($edit_query) {
                     echo "<div class='message'>
@@ -84,10 +84,8 @@ if (!isset($_SESSION['valid'])) {
 
                     <div class="field input">
                         <label for="commuting-method">Commuting Method</label>
-                        <input type="text" name="age" id="age" value="<?php echo $res_Method; ?>" autocomplete="off" required>
-
                         <select id="commuting-method" name="commuting-method">
-                            <option value=""><?php echo $res_Method; ?></option>
+                            <option><?php echo $res_Method; ?></option>
                             <option value="Car">Car</option>
                             <option value="Motorcycle">Motorcycle</option>
                             <option value="Public-Transport">Public Transport</option>
@@ -97,7 +95,7 @@ if (!isset($_SESSION['valid'])) {
                     <div class="field input">
                         <label for="energy">Energy</label>
                         <select id="energy" name="energy">
-                            <option value="<?php echo $res_Energy; ?>"></option>
+                            <option><?php echo $res_Energy; ?></option>
                             <option value="Fan">Fan</option>
                             <option value="Air-Condition">Air-Condition</option>
                         </select>
