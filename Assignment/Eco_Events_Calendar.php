@@ -35,7 +35,7 @@
         }
 
         // Close database connection
-        $conn->close();
+        $con->close();
         ?>
     </div>
 </body>
