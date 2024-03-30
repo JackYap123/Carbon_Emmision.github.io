@@ -148,7 +148,7 @@
                 <div class="heroContainer home-hero1">
                     <div class="home-container1">
                         <h1 class="home-hero-heading heading1">
-                            Track Your Carbon Footprint
+                            Recommendations to Reduce Your Carbon Footprint
                         </h1>
                         <span class="home-hero-sub-heading bodyLarge">
                             <span>Empowering you to make a difference</span>
