@@ -219,9 +219,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Display notification count on the notification icon
-    $notification_count = isset($_SESSION['notification_count']) ? $_SESSION['notification_count'] : 0;
-
-    // Display the notification icon with the count
-    echo "<div class='notification-icon'><span class='notification-count'>$notification_count</span></div>";
 }
