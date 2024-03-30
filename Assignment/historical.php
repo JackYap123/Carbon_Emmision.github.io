@@ -53,7 +53,7 @@ $conn->close();
   <link rel="stylesheet" href="css/header_footer.css">
 
   <?php
-  include_once("html/Header.html");
+  include_once("php/Header.php");
   ?>
 </head>
 

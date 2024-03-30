@@ -1,5 +1,5 @@
 <?php
-    include_once("html/Header.html");
+    include_once("Header.php");
     include_once("php/config.php");
 ?>
 

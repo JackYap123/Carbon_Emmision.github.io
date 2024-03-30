@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/header_footer.css">
 
     <?php
-    include("html/header.html");
+    include("header.php");
     ?>
     <style>
         #myTable {
