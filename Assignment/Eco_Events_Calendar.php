@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Events Calendar</title>
-    <link rel="stylesheet" href="EcoEventsCalendar.css">
+    <link rel="stylesheet" href="css/EcoEventsCalendar.css">
 </head>
 <body>
     <div class="container">
         <h1>Eco Events</h1>
         <?php
         // Include database connection
-        include 'db_connection.php';
+        include 'php/config.php';
 
         // Fetch events from the database
         $sql = "SELECT * FROM `events`";
-        $result = $conn->query($sql);
+        $result = $con->query($sql);
 
         // Display events
         if ($result->num_rows > 0) {
@@ -35,7 +35,7 @@
         }
 
         // Close database connection
-        $conn->close();
+        $con->close();
         ?>
     </div>
 </body>
