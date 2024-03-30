@@ -1,9 +1,9 @@
 <?php
 // Database configuration for Eco Events Calendar
 $servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$database = "eco_events_calendar";
+$username = "root";
+$password = "";
+$database = "carbon_emmision";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
