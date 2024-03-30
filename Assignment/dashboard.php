@@ -45,6 +45,14 @@
             border-radius: 5px;
             margin-top: 20px;
         }
+        .message-container {
+            padding: 20px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -52,6 +60,8 @@
     <div id="container" style="width: 500px;height: 500px;">
         <canvas id="myChart" width="400" height="400"></canvas>
     </div>
+
+    
 
     <!-- Dropdown box to select sorting order -->
     <label for="sortOrder">Sort Order:</label>
@@ -93,7 +103,11 @@
             $transportData[] = $row['transport_total'];
             $electricData[] = $row['Total_KHW'];
         }
-    }
+    }else {
+        echo "<<div class='message-container'>
+        You haven't submitted any data before.
+        </div><br>";
+        echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";    }
 
     // Step 6: Close Connection
     $conn->close();
