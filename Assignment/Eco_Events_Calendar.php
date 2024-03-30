@@ -11,11 +11,11 @@
         <h1>Eco Events</h1>
         <?php
         // Include database connection
-        include 'db_connection.php';
+        include 'php/config.php';
 
         // Fetch events from the database
         $sql = "SELECT * FROM `events`";
-        $result = $conn->query($sql);
+        $result = $con->query($sql);
 
         // Display events
         if ($result->num_rows > 0) {
