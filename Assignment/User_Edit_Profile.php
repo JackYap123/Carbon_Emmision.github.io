@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Login_Page_User.css">
+    <link rel="stylesheet" href="css/Login_Page_User.css">
     <title>Document</title>
 </head>
 
@@ -51,8 +51,8 @@
                     echo"<a href='Main_Page.php'><button class='btn'>Login in now</button>";
                     }
                 }else{
-                    $id = $_SESSION['id'];
-                    $query = mysqli_query($con,"SELECT * FROM users WHERE Id=$id");
+                    $id = $_SESSION['user_Id'];
+                    $query = mysqli_query($con,"SELECT * FROM users WHERE user_Id=$id");
                     
                     while($result = mysqli_fetch_assoc($query)){
                         $res_Uname = $result['UserName'];
@@ -77,6 +77,20 @@
                 <div class="field input">
                     <label for="age">Age</label>
                     <input type="number" name="age" id="age" value="<?php echo $res_Age;?>" autocomplete="off" required>
+                </div>
+                <div class="field input">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" autocomplete="new-password" required>
+                </div>
+                
+                <div class="field input">
+                    <label for="age">Age</label>
+                    <input type="number" name="age" id="age" autocomplete="new-password" required>
+                </div>
+
+                <div class="field input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" autocomplete="new-password" required>
                 </div>
 
                 <div class="field">
