@@ -184,6 +184,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['Total_KHW'] = $Total_KHW;
         $_SESSION['Total_Time_Span'] = $Total_Time_Span;
         $_SESSION['Total_Time_Span_Month'] = $Total_Time_Span_Month;
+        $_SESSION['notification_count'] = 0;
 
 
         header("Location: historical.php?");
@@ -193,12 +194,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Close database connection
-    $conn->close();
-    $user_id = $_SESSION['user_Id']; // Assuming you have a session variable for user_Id
-    $sql_check = "SELECT * FROM food_carbon_emission WHERE user_Id = $user_id";
-    $result_check = $conn->query($sql_check);
-    if ($result_check->num_rows == 0) {
-        // User's data doesn't exist, increment the notification count
-        $_SESSION['notification_count']++;
+    if (!isset($_SESSION['notification_count'])) {
+        $_SESSION['notification_count'] = 0;
     }
+
+    // Check if the form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Your existing code for processing form submission...
+
+        // Database connection and data insertion...
+
+        // Close database connection
+        $conn->close();
+
+        // Increment notification count if necessary
+        $user_id = $_SESSION['user_Id'];
+        $sql_check = "SELECT * FROM food_carbon_emission WHERE user_Id = $user_id AND DATE(created_at) = CURDATE()";
+        $result_check = $conn->query($sql_check);
+
+        if ($result_check->num_rows == 0) {
+            // User hasn't submitted data for the current day, increment notification count
+            $_SESSION['notification_count']++;
+            var_dump($_SESSION['notification_count']);
+        }
+    }
+
+    // Display notification count on the notification icon
+    $notification_count = isset($_SESSION['notification_count']) ? $_SESSION['notification_count'] : 0;
+
+    // Display the notification icon with the count
+    echo "<div class='notification-icon'><span class='notification-count'>$notification_count</span></div>";
 }
