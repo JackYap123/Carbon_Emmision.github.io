@@ -1,0 +1,23 @@
+
+php
+Copy code
+<?php
+// Include database connection
+include 'config.php';
+
+// Get data from the form
+$eventName = $_POST['eventName'];
+$userName = $_POST['userName'];
+$userEmail = $_POST['userEmail'];
+
+// Insert registration data into the database
+$sql = "INSERT INTO `registrations` (`event_name`, `user_name`, `user_email`) VALUES ('$eventName', '$userName', '$userEmail')";
+if ($con->query($sql) === TRUE) {
+    echo "Registration successful!";
+} else {
+    echo "Error: " . $sql . "<br>" . $con->error;
+}
+
+// Close database connection
+$con->close();
+?>
