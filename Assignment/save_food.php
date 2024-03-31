@@ -36,9 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $motor_gas = $_POST['motorGas'];
     $public_transport_type = $_POST['pbType'];
     $drive_distance = isset($_POST['Distance']) ? $_POST['Distance'] : null;
-    $average_kwh = isset($_POST['avrageKHW']) ? $_POST['avrageKHW'] : null;
-    $time_span_months = isset($_POST['TPH']) ? $_POST['TPH'] : null;
-    $carbon_intensity = isset($_POST['CI']) ? $_POST['CI'] : null;
+    $electricity_consumption = isset($_POST['electricity_consumption']) ? $_POST['electricity_consumption'] : null;
+    $carbon_itensity = isset($_POST['Carbon-Intensity']) ? $_POST['Carbon-Intensity'] : null;
     $food_total = 0;
 
     switch ($diet) {
@@ -147,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $road_number = 100;
                     break;
             }
-            $transport_total = (($type_number * $drive_distance) + ($motor_gas * $drive_distance) + ($road_type * $drive_distance)) / 1000;
+            $transport_total = (($type_number * $drive_distance) + ($gas_number * $drive_distance) + ($road_number * $drive_distance)) / 1000;
             break;
         case 'Public-Transport':
             switch ($public_transport_type) {
@@ -169,15 +168,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             break;
     }
 
-    $Total_KHW = $average_kwh * $time_span_months;
-    $Total_Time_Span = $carbon_intensity * $average_kwh / ($time_span_months * 30);
-    $Total_Time_Span_Month = $Total_Time_Span * $time_span_months;
+    $Total_KHW = $electricity_consumption * $carbon_itensity/1000;
     $id = $_SESSION['user_Id'];
     // Assuming $result is the result of your database query
 
     // Insert data into the database
-    $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total, Total_KHW, Total_Time_Span, Total_Time_Span_Month, user_Id)
-        VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total','$Total_KHW', '$Total_Time_Span', '$Total_Time_Span_Month','$id')";
+    $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, electricity_consumption, carbon_itensity, food_total, transport_total, Total_KHW, user_Id)
+        VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$electricity_consumption', '$carbon_itensity', '$food_total', '$transport_total','$Total_KHW','$id')";
 
     if ($conn->query($sql) === TRUE) {
 
@@ -186,10 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['food_total'] = $food_total;
         $_SESSION['transport_total'] = $transport_total;
         $_SESSION['Total_KHW'] = $Total_KHW;
-        $_SESSION['Total_Time_Span'] = $Total_Time_Span;
-        $_SESSION['Total_Time_Span_Month'] = $Total_Time_Span_Month;
-        
-
+       
 
         // Reset notification count
         $_SESSION['notification_count'] = 0;

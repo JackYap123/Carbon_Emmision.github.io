@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     // Step 5: Calculate time difference in minutes
     $current_time = time();
     $time_difference_minutes = ($current_time - $submit_time) / 60;
-    if ($time_difference_minutes > 1440) {
+    if ($time_difference_minutes >1440) {
         // If the difference is greater than 24 hours, set notification count to 1
         $_SESSION['notification_count'] = 1;
     } else if ($time_difference_minutes < 1440){

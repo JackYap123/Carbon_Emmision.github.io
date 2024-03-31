@@ -66,7 +66,7 @@ $con->close();
           <img class="card-img-top" src="https://source.unsplash.com/400x300/?food" alt="Food Image">
           <div class="card-body">
             <h5 class="card-title">Column 1</h5>
-            <p class="card-text">Your food carbon emission is total is:<?php echo $food_total ?></p>
+            <p class="card-text">Your food carbon emission is total is:<?php echo $food_total ?> Kwh</p>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ $con->close();
           <img class="card-img-top" src="https://source.unsplash.com/400x300/?transportation" alt="Food Image">
           <div class="card-body">
             <h5 class="card-title">Column 2</h5>
-            <p class="card-text">Your trasportation carbon emission is total is:<?php echo $transport_total ?></p>
+            <p class="card-text">Your trasportation carbon emission is total is:<?php echo $transport_total ?> Kwh</p>
           </div>
         </div>
       </div>
@@ -84,9 +84,7 @@ $con->close();
           <img class="card-img-top" src="https://source.unsplash.com/400x300/?electric" alt="Food Image">
           <div class="card-body">
             <h5 class="card-title">Column 3</h5>
-            <p class="card-text">Your electrical carbon emission is total is:<?php echo $Total_KHW ?>
-              Your day of electric carbon emission is total is:<?php echo $Total_Time_Span ?>
-              Your month carbon emission is total is:<?php echo $Total_Time_Span_Month ?>
+            <p class="card-text">Your electrical carbon emission is total is:<?php echo $Total_KHW ?> Kwh
             </p>
           </div>
         </div>

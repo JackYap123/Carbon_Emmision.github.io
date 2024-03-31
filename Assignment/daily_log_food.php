@@ -193,16 +193,8 @@
                 <div class="row">
                     <div class="col">
                         <div id="AMK" class="row">
-                            <label for="avrageKHW">Submit Average khw (kilowatt per hours)</label>
-                            <input type="number" id="avrageKHW" name="avrageKHW" min="0" placeholder="Exm: 1000">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div id="Time-Span-Hours" class="row">
-                            <label for="TPH">Time Span(Months)</label>
-                            <input type="number" id="TPH" name="TPH" min="0" placeholder="Exm: 12">
+                            <label for="electricity_consumption">Electricity_consumption</label>
+                            <input type="number" id="electricity_consumption" name="electricity_consumption" min="0" placeholder="Exm: 1000">
                         </div>
                     </div>
                 </div>
@@ -210,7 +202,7 @@
                     <div class="col">
                         <div id="Carbon-Intensity" class="row">
                             <label for="Carbon-Intensity">Carbon Intensity</label>
-                            <input type="number" id="CI" name="CI" min="0" placeholder="Exm: 72">
+                            <input type="number" id="Carbon-Intensity" name="Carbon-Intensity" min="0" placeholder="Exm: 72">
                         </div>
                     </div>
                 </div>

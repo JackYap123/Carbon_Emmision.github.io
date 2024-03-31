@@ -133,7 +133,7 @@ function nextPage1() {
         updateProgressBar();
         document.getElementById('page1-btn').classList.remove('active');
         document.getElementById('page2-btn').classList.add('active');
-        
+
     } else {
         alert("Please fill out all required fields before proceeding.");
     }
@@ -156,7 +156,7 @@ function nextPage2() {
         updateProgressBar();
         document.getElementById('page2-btn').classList.remove('active');
         document.getElementById('page3-btn').classList.add('active');
-    }else {
+    } else {
         alert("Please fill out all required fields before proceeding.");
     }
 }
@@ -171,15 +171,7 @@ function prevPage2() {
 }
 
 //The first page if havn't submit all of the part, you couldn't go to the next page
-function validateAndSubmitForm() {
-    if (validateFormFood()) { // If form validation passes
-        nextPage1(); // Navigate to the next page
-        return true;
-    } else {
-        alert("Please fill out all required fields before proceeding.");
-        return false;
-    }
-}
+
 // Function to reset form values and display states
 function resetForm() {
     // Reset first form (diet-select)
@@ -257,8 +249,6 @@ function validateFormTransportation() {
     var pbTypeSelect = document.getElementById("pb-type-select").value;
     var distance = document.getElementById("Distance").value;
 
-    // || carTypeSelect == "Please Select Car type" || carGasSelect == "Please Select Car Gasoline" || carRoadSelect == "Please Select Road type" || motorTypeSelect == "Please Select Motor Type" || motorGasSelect == "Please Select Motor Gasoline" || pbTypeSelect == "Please Select Public Transport Type" || distance == ""
-
     if (carSelect == "Please Select Your Transpotation") {
         alert("Please Field Out the transpotation");
         return false;
@@ -269,9 +259,10 @@ function validateFormTransportation() {
             return false;
         }
     } else if (carSelect == "Motorcycle") {
-        if (motorTypeSelect == "Please Select Motor Type" || motorGasSelect == "Please Select Motor Gasoline" || carRoadSelect == "Please Select Road type" || distance == "")
+        if (motorTypeSelect == "Please Select Motor Type" || motorGasSelect == "Please Select Motor Gasoline" || carRoadSelect == "Please Select Road type" || distance == ""){
             alert("Please Field Out the All the Motorcycle section");
-        return false;
+            return false;
+        }
     } else if (carSelect == "Public Transport") {
         if (pbTypeSelect == "Please Select Public Transport Type" || distance == "")
             alert("Please Field Out the All the Public Transport Type section")
