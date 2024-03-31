@@ -1,6 +1,6 @@
 <?php
-    include "php/config.php";
-    include "html/header.html";
+    include "database.php";
+    include "header.php";
     include "url_loader.php";
 ?>
 
