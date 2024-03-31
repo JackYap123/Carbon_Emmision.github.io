@@ -1,5 +1,5 @@
 <?php
-    include "header_footer/header.html";
+    include "html/header.html";
     include "database.php";
 ?>
 
@@ -9,8 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon Emmision</title>
-    <link rel="stylesheet" href="CSS/header_footer.css">
-    <link rel="stylesheet" href="CSS/feedback.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+    <link rel="stylesheet" href="css/feedback.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -125,7 +125,7 @@
 </html>
 
 <?php
-    include "header_footer/footer.html";
+    include "html/footer.html";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user_interface = $_POST["user_interface"];
