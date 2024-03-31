@@ -26,7 +26,7 @@
 
     for ($i=0; $i < 24; $i++) { 
         $sql = "SELECT * FROM educational_content WHERE id =" . ($i + 1);
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($con, $sql);
         $row = mysqli_fetch_assoc($result);
         ${"url_" . $i} = $row['url'];
     }
