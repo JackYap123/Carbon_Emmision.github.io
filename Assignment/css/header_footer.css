@@ -11,6 +11,7 @@ header {
     background-color: #faf9ef;
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
 button {
@@ -94,4 +95,7 @@ footer {
 .foot_container {
     display: grid;
     margin-left: 2.5em;
+}
+.notification-icon{
+    margin-top: 2.5em;
 }
