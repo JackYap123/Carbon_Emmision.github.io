@@ -15,7 +15,6 @@ if ($con->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $con->error;
 }
-
 // Close database connection
 $con->close();
 ?>
