@@ -1,6 +1,6 @@
 <?php
     // Including the database connection file
-    include "database.php";
+    include "php/config.php";
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
                 <?php
                     // Retrieving feedback data from the database
                     $sql = "SELECT * FROM user_feedback";
-                    $result = $conn->query($sql);
+                    $result = $con->query($sql);
 
                     // Displaying feedback cards if there's feedback available
                     if ($result->num_rows > 0) {
@@ -44,7 +44,7 @@
                         echo "<p class='text-muted'>No feedback available.</p>";
                     }
                     // Closing the database connection
-                    $conn->close();
+                    $con->close();
                 ?>
             </div>
         </div>
