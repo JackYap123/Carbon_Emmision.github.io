@@ -10,7 +10,9 @@
 
     <title>Food Tracker</title>
 </head>
-
+<style>
+    
+</style>
 
 <body>
     <?php
@@ -96,7 +98,7 @@
                 <!-- select car type -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-type-select" name="CarType">
                                 <option>Please Select Car type</option>
                                 <option value="HatchBack">Hatchback</option>
@@ -110,7 +112,7 @@
                 <!-- select Car Gas -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-gas-select" name="Cargas">
                                 <option>Please Select Car Gasoline</option>
                                 <option value="Petrol">Petrol</option>
@@ -124,7 +126,7 @@
                 <!-- select Road -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-road-select" name="Road">
                                 <option>Please Select Road type</option>
                                 <option value="MainRoad">Main Road</option>
@@ -138,7 +140,7 @@
                 <!-- select Motor Type -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="motor-type-select" name="motorType">
                                 <option>Please Select Motor Type</option>
                                 <option value="AC-motor">Alternating Current</option>
@@ -150,7 +152,7 @@
                 <!-- select Motor Oil -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="motor-gas-select" name="motorGas">
                                 <option>Please Select Motor Gasoline</option>
                                 <option value="Multigrade-Oil">Multigrade Oil</option>
@@ -162,7 +164,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="pb-type-select" name="pbType">
                                 <option>Please Select Public Transport Type</option>
                                 <option value="Bus">Bus</option>
