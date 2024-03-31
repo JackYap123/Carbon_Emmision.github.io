@@ -81,6 +81,8 @@ $con->close();
                 <a href="Educational_Content.php" class="navi">Learn</a>
                 <a href="recommendations.php" class="navi">Recommendation</a>
                 <a href="Eco_Events_Calendar.php" class="navi">Event Calander</a>
+                <a href="feedback.php" class="navi">Feedback</a>
+
 
                 <span class="notification-icon">
                     <i class="fas fa-bell"></i>
