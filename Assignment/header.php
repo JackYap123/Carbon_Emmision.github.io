@@ -4,7 +4,7 @@
 include_once("php/config.php");
 session_start();
 if ($con->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $con->connect_error);
 }
 
 // Step 2: Prepare SQL Query to Fetch Submit Time
@@ -22,13 +22,14 @@ if ($result->num_rows > 0) {
     // Step 5: Calculate time difference in minutes
     $current_time = time();
     $time_difference_minutes = ($current_time - $submit_time) / 60;
-    if ($time_difference_minutes < 1440) {
+    if ($time_difference_minutes > 1440) {
         // If the difference is greater than 24 hours, set notification count to 1
-        var_dump($_SESSION['notification_count']);
         $_SESSION['notification_count'] = 1;
-    } else {
+    } else if ($time_difference_minutes < 1440){
         // If the difference is not greater than 24 hours, set notification count to 0
         $_SESSION['notification_count'] = 0;
+    }else{
+        $_SESSION['notification_count']  = 11;
     }
 
     // Step 6: Perform your calculations or checks based on $time_difference_minutes
@@ -82,7 +83,6 @@ $con->close();
                 <a href="Educational_Content.php" class="navi">Learn</a>
                 <a href="Social_Share.php" class="navi">Social_Media</a>
                 <a href="Social_Share.php" class="navi">Social_Media</a>
-                <?php var_dump($_SESSION['notification_count']);?>
 
                 <span class="notification-icon">
                     <i class="fas fa-bell"></i>
