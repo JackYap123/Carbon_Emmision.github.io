@@ -174,32 +174,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Total_Time_Span_Month = $Total_Time_Span * $time_span_months;
     $id = $_SESSION['user_Id'];
     // Assuming $result is the result of your database query
-    if ($result->num_rows > 0) {
-        // Fetch the latest submission record
-        $row = $result->fetch_assoc();
-
-        // Get the submit time from the database record
-        $submit_time = strtotime($row['Submit_Time']);
-
-        // Get the current time
-        $time_now = time();
-
-        // Calculate the time difference in seconds
-        $time_difference_seconds = $time_now - $submit_time;
-
-        // Check if the last submission was made more than 24 hours ago (86400 seconds in 24 hours)
-        if ($time_difference_seconds > 86400) {
-            // Set the notification count to 1
-            $_SESSION['notification_count'] = 1;
-        } else {
-            // Set the notification count to 0
-            $_SESSION['notification_count'] = 0;
-        }
-    } else {
-        // If there are no results, set the notification count to 0
-        $_SESSION['notification_count'] = 0;
-    }
-
 
     // Insert data into the database
     $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total, Total_KHW, Total_Time_Span, Total_Time_Span_Month, user_Id)
