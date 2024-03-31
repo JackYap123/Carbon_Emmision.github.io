@@ -2,7 +2,9 @@
 body {
     font-family: Arial, sans-serif;
 }
-
+header{
+    position: relative;
+}
 
 .container {
     max-width: 800px;
