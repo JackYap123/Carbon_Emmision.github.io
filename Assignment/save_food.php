@@ -182,11 +182,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
 
         // Set session variables
+        
         $_SESSION['food_total'] = $food_total;
         $_SESSION['transport_total'] = $transport_total;
         $_SESSION['Total_KHW'] = $Total_KHW;
         $_SESSION['Total_Time_Span'] = $Total_Time_Span;
         $_SESSION['Total_Time_Span_Month'] = $Total_Time_Span_Month;
+        
 
 
         // Reset notification count

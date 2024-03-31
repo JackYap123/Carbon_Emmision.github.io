@@ -1,6 +1,14 @@
 <?php
 include_once("php/config.php");
 include_once("header.php");
+$user_id = $_SESSION['user_Id'];
+// Retrieve $total_food from session variable
+
+$food_total = $_SESSION['food_total'];
+$transport_total = $_SESSION['transport_total'];
+$Total_KHW = $_SESSION['Total_KHW'];
+$Total_Time_Span = $_SESSION['Total_Time_Span'];
+$Total_Time_Span_Month = $_SESSION['Total_Time_Span_Month'];
 if (!isset($_SESSION['user_Id'])) {
   // Redirect user to login page if not logged in
   header("Location: home_page.php");
@@ -8,13 +16,7 @@ if (!isset($_SESSION['user_Id'])) {
 }
 
 
-$user_id = $_SESSION['user_Id'];
-// Retrieve $total_food from session variable
-$food_total = $_SESSION['food_total'];
-$transport_total = $_SESSION['transport_total'];
-$Total_KHW = $_SESSION['Total_KHW'];
-$Total_Time_Span = $_SESSION['Total_Time_Span'];
-$Total_Time_Span_Month = $_SESSION['Total_Time_Span_Month'];
+
 
 // Step 1: Database Connection
 $servername = "localhost";
@@ -55,7 +57,11 @@ $conn->close();
   include_once("Header.php");
   ?>
 </head>
-
+<style>
+    header{
+      position: absolute;
+    }
+</style>
 <body>
   <div class="container">
     <div class="row">
@@ -65,7 +71,6 @@ $conn->close();
           <div class="card-body">
             <h5 class="card-title">Column 1</h5>
             <p class="card-text">Your food carbon emission is total is:<?php echo $food_total ?></p>
-            <a href="#" class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
@@ -75,7 +80,6 @@ $conn->close();
           <div class="card-body">
             <h5 class="card-title">Column 2</h5>
             <p class="card-text">Your trasportation carbon emission is total is:<?php echo $transport_total ?></p>
-            <a href="#" class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
@@ -87,9 +91,7 @@ $conn->close();
             <p class="card-text">Your electrical carbon emission is total is:<?php echo $Total_KHW ?>
               Your day of electric carbon emission is total is:<?php echo $Total_Time_Span ?>
               Your month carbon emission is total is:<?php echo $Total_Time_Span_Month ?>
-
             </p>
-            <a href="#" class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
