@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,13 +6,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/daily_log_food.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+
     <title>Food Tracker</title>
 </head>
-
+<style>
+    
+</style>
 
 <body>
     <?php
-    include_once("Header.php");
+    include_once("header.php");
     ?>
     <!-- Form 1 -->
     <div class="container">
@@ -97,7 +98,7 @@ session_start();
                 <!-- select car type -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-type-select" name="CarType">
                                 <option>Please Select Car type</option>
                                 <option value="HatchBack">Hatchback</option>
@@ -111,7 +112,7 @@ session_start();
                 <!-- select Car Gas -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-gas-select" name="Cargas">
                                 <option>Please Select Car Gasoline</option>
                                 <option value="Petrol">Petrol</option>
@@ -125,7 +126,7 @@ session_start();
                 <!-- select Road -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-road-select" name="Road">
                                 <option>Please Select Road type</option>
                                 <option value="MainRoad">Main Road</option>
@@ -139,7 +140,7 @@ session_start();
                 <!-- select Motor Type -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="motor-type-select" name="motorType">
                                 <option>Please Select Motor Type</option>
                                 <option value="AC-motor">Alternating Current</option>
@@ -151,7 +152,7 @@ session_start();
                 <!-- select Motor Oil -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="motor-gas-select" name="motorGas">
                                 <option>Please Select Motor Gasoline</option>
                                 <option value="Multigrade-Oil">Multigrade Oil</option>
@@ -163,7 +164,7 @@ session_start();
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="pb-type-select" name="pbType">
                                 <option>Please Select Public Transport Type</option>
                                 <option value="Bus">Bus</option>
@@ -222,6 +223,9 @@ session_start();
         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
     </div>
     </div>
+    <?php
+        include_once("html/footer.html");
+    ?>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="js/daily_log_food.js"></script>

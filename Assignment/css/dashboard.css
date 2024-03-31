@@ -1,0 +1,50 @@
+/* Add the following CSS styles to your existing stylesheets */
+
+/* Styling for table */
+#myTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#myTable th,
+#myTable td,#myTable tr {
+    border: 0.5px solid black;
+    padding: 10px;
+    border-width: 1px; /* Add border width */
+}
+
+/* Apply border to the bottom of table headers */
+#myTable th {
+    border-bottom: 2px solid #ddd;
+}
+
+/* Apply border to the top of table cells */
+#myTable td {
+    border-top: 1px solid #ddd;
+}
+
+/* Add margin-top to the table to separate from other elements */
+#myTable {
+    margin-top: 20px;
+}
+
+#myTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Colors for bars */
+.chart-colors {
+    background-color: rgba(255, 99, 132, 0.2); /* Red for food total */
+    border-color: rgba(255, 99, 132, 1);
+}
+
+.chart-colors2 {
+    background-color: rgba(54, 162, 235, 0.2); /* Blue for transport total */
+    border-color: rgba(54, 162, 235, 1);
+}
+
+.chart-colors3 {
+    background-color: rgba(11, 156, 49, 0.2); /* Green for electric total */
+    border-color: rgba(11, 156, 49, 1);
+}

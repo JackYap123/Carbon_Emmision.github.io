@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Function to generate HTML table from database query result
 function generate_table($result) {
     if ($result->num_rows > 0) {
@@ -14,22 +15,20 @@ function generate_table($result) {
 }
 
 // Step 1: Connect to the database
-$servername = "localhost"; // Change this to your database server
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
-$dbname = "carbon_emmision"; // Change this to your database name
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+include_once('php/config.php');
 
 // Check connection
-if ($conn->connect_error) {
+if ($con->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$id = $_SESSION['user_Id'];
+
 // Step 2: Execute a query to fetch data
-$sql = "SELECT * FROM food_carbon_emission"; // Change "your_table" to the name of your table
-$result = $conn->query($sql);
+$sql = "SELECT * FROM food_carbon_emission WHERE user_Id = $id
+AND date_created >= DATE_SUB(NOW(), INTERVAL 30 DAY)"; 
+// Change "your_table" to the name of your table
+$result = $con->query($sql);
 
 ?>
 
@@ -59,7 +58,7 @@ $result = $conn->query($sql);
 generate_table($result);
 
 // Step 4: Close connection
-$conn->close();
+$con->close();
 ?>
 
 </body>

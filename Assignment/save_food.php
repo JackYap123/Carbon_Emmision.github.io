@@ -3,6 +3,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include_once("php/config.php");
+session_start();
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Establish connection to your database
@@ -15,6 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+
     $diet = $_POST['diet'];
     $meat = $_POST['meat'];
     $vegetable = $_POST['vegetable'];
@@ -32,23 +40,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $time_span_months = isset($_POST['TPH']) ? $_POST['TPH'] : null;
     $carbon_intensity = isset($_POST['CI']) ? $_POST['CI'] : null;
     $food_total = 0;
+
     switch ($diet) {
         case 'Omnivore':
             $food_total = ($meat * 40) + ($vegetable * 0.3);
 
             if ($wasted_food === 'yes') {
-                $food_total += ($waste * 47)/1000;
+                $food_total += ($waste * 47) / 1000;
             } else {
-                $food_total += 0/1000;
+                $food_total += 0 / 1000;
             }
             break;
         case 'Vegetarian':
             $food_total = ($vegetable * 0.3);
 
             if ($wasted_food === 'yes') {
-                $food_total += ($waste * 10)/1000;
+                $food_total += ($waste * 10) / 1000;
             } else {
-                $food_total += 0/1000;
+                $food_total += 0 / 1000;
             }
             break;
     }
@@ -95,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'High Way':
                     $road_number = 200;
                     break;
-                case 'Rural Roads';
+                case 'Rural Roads':
                     $road_number = 120;
                     break;
                 case 'Dash':
@@ -131,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'High Way':
                     $road_number = 200;
                     break;
-                case 'Rural Roads';
+                case 'Rural Roads':
                     $road_number = 120;
                     break;
                 case 'Dash':
@@ -161,29 +170,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $Total_KHW = $average_kwh * $time_span_months;
-    $Total_Time_Span = $carbon_intensity * $average_kwh /($time_span_months * 30);
+    $Total_Time_Span = $carbon_intensity * $average_kwh / ($time_span_months * 30);
     $Total_Time_Span_Month = $Total_Time_Span * $time_span_months;
-
+    $id = $_SESSION['user_Id'];
+    // Assuming $result is the result of your database query
 
     // Insert data into the database
-    $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total, Total_KHW, Total_Time_Span, Total_Time_Span_Month)
-        VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total','$Total_KHW', '$Total_Time_Span', '$Total_Time_Span_Month')";
+    $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, average_kwh, time_span_months, carbon_intensity,food_total, transport_total, Total_KHW, Total_Time_Span, Total_Time_Span_Month, user_Id)
+        VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$average_kwh', '$time_span_months', '$carbon_intensity', '$food_total', '$transport_total','$Total_KHW', '$Total_Time_Span', '$Total_Time_Span_Month','$id')";
 
     if ($conn->query($sql) === TRUE) {
-        session_start();
 
-        // Set $total_food in a session variable
+        // Set session variables
+        
         $_SESSION['food_total'] = $food_total;
         $_SESSION['transport_total'] = $transport_total;
         $_SESSION['Total_KHW'] = $Total_KHW;
         $_SESSION['Total_Time_Span'] = $Total_Time_Span;
         $_SESSION['Total_Time_Span_Month'] = $Total_Time_Span_Month;
+        
 
-        header("Location: historical.php?");
+
+        // Reset notification count
+        $_SESSION['notification_count'] = 0;
+        $time = $_SESSION['notification_count'];
+
+
+        $time = $_SESSION['notification_count'];
+        // Update the submission time
+        $time++;
+
+        $_SESSION['notification_count'] = $time;
+        // Redirect to historical.php
+
+        header("Location: historical.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+
 
     // Close database connection
     $conn->close();
