@@ -201,7 +201,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['notification_count'] = $time;
         // Redirect to historical.php
 
-        // header("Location: historical.php");
+        header("Location: historical.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

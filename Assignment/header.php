@@ -9,7 +9,7 @@ if ($con->connect_error) {
 
 // Step 2: Prepare SQL Query to Fetch Submit Time
 $id = $_SESSION['user_Id']; // Assuming $_SESSION['user_Id'] contains the user's ID
-$sql_select = "SELECT Submit_Time FROM food_carbon_emission WHERE user_id = $id ORDER BY Submit_Time DESC LIMIT 1";
+$sql_select = "SELECT Submit_Time FROM food_carbon_emission WHERE user_Id = $id ORDER BY Submit_Time DESC LIMIT 1";
 
 // Step 3: Execute Query
 $result = $con->query($sql_select);
@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     // Step 5: Calculate time difference in minutes
     $current_time = time();
     $time_difference_minutes = ($current_time - $submit_time) / 60;
-    if ($time_difference_minutes > 1440) {
+    if ($time_difference_minutes < 1440) {
         // If the difference is greater than 24 hours, set notification count to 1
         var_dump($_SESSION['notification_count']);
         $_SESSION['notification_count'] = 1;
