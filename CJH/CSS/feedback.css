@@ -1,0 +1,80 @@
+#container1 {
+    display: grid;
+    place-items: center;
+    background-color: #faf9ef;
+    padding: 10em;
+}
+
+.head-title {
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0.25em;
+}
+
+.content-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    font-size: 50px;
+}
+
+.content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 50%;
+    text-align: center;
+}
+
+#container2 {
+    background-color: #788353;
+    padding-bottom: 5em;
+    padding-top: 5em;
+}
+
+#container3 {
+    background-color: #faf9ef;
+    padding-bottom: 5em;
+    padding-top: 5em;
+}
+
+#container4 {
+    background-color: #788353;
+    padding-bottom: 5em;
+    padding-top: 5em;
+}
+
+#container5 {
+    background-color: #faf9ef;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container1 {
+    text-align: right;
+}
+
+.survey-option {
+    margin-bottom: 1em;
+    margin-right: 0.25em;
+}
+
+#container6 {
+    background-color: #788353;
+    padding-bottom: 5em;
+    padding-top: 5em;
+}
+
+.form-control.adjust-width {
+    width: 100%;
+}
