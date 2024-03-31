@@ -1,6 +1,6 @@
 <?php
 // Include database connection
-include 'config.php';
+include 'php/config.php';
 
 // Fetch events from the database
 $sql = "SELECT * FROM `events`";

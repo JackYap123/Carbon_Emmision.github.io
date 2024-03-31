@@ -10,13 +10,13 @@
     <div class="container">
         <h1>Eco Events</h1>
         <!-- Display the list of events -->
-        <?php include 'php/display_events.php'; ?>
+        <?php include 'display_events.php'; ?>
     </div>
 
     <!-- Admin "Upload Event" form -->
     <div class="admin-upload">
         <h2>Upload Event</h2>
-        <form action="php/upload_event.php" method="post">
+        <form action="upload_event.php" method="post">
             <label for="title">Event Title:</label>
             <input type="text" id="title" name="title" required><br>
             <label for="description">Description:</label>
@@ -36,7 +36,7 @@
     <!-- User Registration Form -->
     <div class="user-registration">
         <h2>Register for an Event</h2>
-        <form action="php/register_event.php" method="post">
+        <form action="register_event.php" method="post">
             <label for="eventName">Event Name:</label>
             <input type="text" id="eventName" name="eventName" required><br>
             <label for="userName">Your Name:</label>
