@@ -76,9 +76,7 @@ $con->close();
             </div>
             <nav class="middle">
                 <a href="home_page.php" class="navi">Home</a>
-                <a href="#" class="navi">Features</a>
-                <a href="daily_log_food.php" class="navi">Calculate</a>
-                <a href="#" class="navi">Daily Activity Log</a>
+                <a href="daily_log_food.php" class="navi">Daily Record</a>
                 <a href="dashboard.php" class="navi">Historical</a>
                 <a href="Educational_Content.php" class="navi">Learn</a>
                 <a href="recommendations.php" class="navi">Recommendation</a>
