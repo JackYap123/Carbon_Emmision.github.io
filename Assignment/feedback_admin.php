@@ -1,4 +1,5 @@
 <?php
+    // Including the database connection file
     include "database.php";
 ?>
 
@@ -13,16 +14,20 @@
 </head>
 <body>
     <div class="container">
+        <!-- Heading for user feedback -->
         <h1>User Feedback</h1>
         <div class="row">
             <div class="col-md-12">
                 <?php
+                    // Retrieving feedback data from the database
                     $sql = "SELECT * FROM user_feedback";
                     $result = $conn->query($sql);
 
+                    // Displaying feedback cards if there's feedback available
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {
                 ?>
+                <!-- Feedback card -->
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Feedback ID: <?php echo $row["id"]; ?></h5>
@@ -35,16 +40,17 @@
                 <?php
                         }
                     } else {
+                        // Displaying a message if no feedback is available
                         echo "<p class='text-muted'>No feedback available.</p>";
                     }
-                    // Close the database connection
+                    // Closing the database connection
                     $conn->close();
                 ?>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS (optional) -->
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
