@@ -81,7 +81,7 @@ $con->close();
                 <a href="#" class="navi">Daily Activity Log</a>
                 <a href="dashboard.php" class="navi">Historical</a>
                 <a href="Educational_Content.php" class="navi">Learn</a>
-                <a href="Social_Share.php" class="navi">Social_Media</a>
+                <a href="recommendations.php" class="navi">Recommendation</a>
 
                 <span class="notification-icon">
                     <i class="fas fa-bell"></i>
