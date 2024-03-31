@@ -57,11 +57,7 @@ $con->close();
   include_once("Header.php");
   ?>
 </head>
-<style>
-    header{
-      position: absolute;
-    }
-</style>
+
 <body>
   <div class="container">
     <div class="row">

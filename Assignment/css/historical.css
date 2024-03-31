@@ -3,16 +3,16 @@ body {
     background-color: #f8f9fa;
     color: #444;
   }
-
-  .container {
-    margin-top: 40px;
-  }
-
   .card {
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    height: 400px;
+  }
+  .col-sm{
+    margin-top: 150px;
+  }
+  header{
+    position: relative;
   }
 
   .card:hover {
