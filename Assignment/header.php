@@ -80,6 +80,7 @@ $con->close();
                 <a href="dashboard.php" class="navi">Historical</a>
                 <a href="Educational_Content.php" class="navi">Learn</a>
                 <a href="recommendations.php" class="navi">Recommendation</a>
+                <a href="Eco_Events_Calendar.php" class="navi">Event Calander</a>
 
                 <span class="notification-icon">
                     <i class="fas fa-bell"></i>
