@@ -34,19 +34,19 @@
     $password = "";
     $database = "carbon_emmision";
 
-    $conn = new mysqli($servername, $username, $password, $database);
+    $con = new mysqli($servername, $username, $password, $database);
 
 
     // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
     }
 
     $id = $_SESSION['user_Id'];
 
     // Step 2: Query Database
     $sql = "SELECT food_total, transport_total, Total_KHW FROM food_carbon_emission WHERE user_Id = $id";
-    $result = $conn->query($sql);
+    $result = $con->query($sql);
 
     // Step 3: Data Processing
     $foodData = [];
@@ -67,7 +67,7 @@
     }
 
     // Step 6: Close Connection
-    $conn->close();
+    $con->close();
     ?>
 
     <table id="myTable">
