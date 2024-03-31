@@ -8,10 +8,12 @@
 }
 
 #myTable th,
-#myTable td,#myTable tr {
+#myTable td,
+#myTable tr {
     border: 0.5px solid black;
     padding: 10px;
-    border-width: 1px; /* Add border width */
+    border-width: 1px;
+    /* Add border width */
 }
 
 /* Apply border to the bottom of table headers */
@@ -35,16 +37,53 @@
 
 /* Colors for bars */
 .chart-colors {
-    background-color: rgba(255, 99, 132, 0.2); /* Red for food total */
+    background-color: rgba(255, 99, 132, 0.2);
+    /* Red for food total */
     border-color: rgba(255, 99, 132, 1);
 }
 
 .chart-colors2 {
-    background-color: rgba(54, 162, 235, 0.2); /* Blue for transport total */
+    background-color: rgba(54, 162, 235, 0.2);
+    /* Blue for transport total */
     border-color: rgba(54, 162, 235, 1);
 }
 
 .chart-colors3 {
-    background-color: rgba(11, 156, 49, 0.2); /* Green for electric total */
+    background-color: rgba(11, 156, 49, 0.2);
+    /* Green for electric total */
     border-color: rgba(11, 156, 49, 1);
+}
+
+header {
+    position: relative;
+}
+
+/* Style for the select element */
+.sortOrder {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Style for the option elements */
+.sortOrder option {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Style for the option elements when hovered */
+.sortOrder option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style for the option elements when selected */
+.sortOrder option:checked {
+    background-color: #007bff;
+    color: #fff;
 }

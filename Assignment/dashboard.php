@@ -1,3 +1,46 @@
+<?php
+ include("header.php");
+// Step 1: Database Connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "carbon_emmision";
+
+$con = new mysqli($servername, $username, $password, $database);
+
+
+// Check connection
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}
+
+$id = $_SESSION['user_Id'];
+
+// Step 2: Query Database
+$sql = "SELECT food_total, transport_total, Total_KHW FROM food_carbon_emission WHERE user_Id = $id";
+$result = $con->query($sql);
+
+// Step 3: Data Processing
+$foodData = [];
+$transportData = [];
+$electricData = [];
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $foodData[] = $row['food_total'];
+        $transportData[] = $row['transport_total'];
+        $electricData[] = $row['Total_KHW'];
+    }
+} else {
+    echo "<<div class='message-container'>
+        You haven't submitted any data before.
+        </div><br>";
+    echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";
+}
+
+// Step 6: Close Connection
+$con->close();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,18 +50,16 @@
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/dashboard.css">
 
-    <?php
-    include("header.php");
-    ?>
+   
 
 </head>
 
 <body>
-    <div id="container" style="width: 500px;height: 500px;">
-        <canvas id="myChart" width="400" height="400"></canvas>
+    <div id="container-1">
+        <div id="container" style="width: 500px;height: 500px; z-index: 0;">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
     </div>
-
-
 
     <!-- Dropdown box to select sorting order -->
     <label for="sortOrder">Sort Order:</label>
@@ -26,49 +67,9 @@
         <option value="asc">Lowest First</option>
         <option value="desc">Highest First</option>
     </select>
+    <button onclick="zoomIn()">Zoom In</button>
+    <button onclick="zoomOut()">Zoom Out</button>
 
-    <?php
-    // Step 1: Database Connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "carbon_emmision";
-
-    $con = new mysqli($servername, $username, $password, $database);
-
-
-    // Check connection
-    if ($con->connect_error) {
-        die("Connection failed: " . $con->connect_error);
-    }
-
-    $id = $_SESSION['user_Id'];
-
-    // Step 2: Query Database
-    $sql = "SELECT food_total, transport_total, Total_KHW FROM food_carbon_emission WHERE user_Id = $id";
-    $result = $con->query($sql);
-
-    // Step 3: Data Processing
-    $foodData = [];
-    $transportData = [];
-    $electricData = [];
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $foodData[] = $row['food_total'];
-            $transportData[] = $row['transport_total'];
-            $electricData[] = $row['Total_KHW'];
-        }
-    } else {
-        echo "<<div class='message-container'>
-        You haven't submitted any data before.
-        </div><br>";
-        echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";
-    }
-
-    // Step 6: Close Connection
-    $con->close();
-    ?>
 
     <table id="myTable">
         <tr>
@@ -101,21 +102,26 @@
                         data: <?php echo json_encode($foodData); ?>,
                         backgroundColor: 'rgba(255, 99, 132, 0.2)',
                         borderColor: 'rgba(255, 99, 132, 1)',
-                        borderWidth: 1
+                        borderWidth: 1,
+                        barThickness: 5 // Adjust the thickness of the bars
                     },
                     {
                         label: 'Transport Total',
                         data: <?php echo json_encode($transportData); ?>,
                         backgroundColor: 'rgba(54, 162, 235, 0.2)',
                         borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
+                        borderWidth: 1,
+                        barThickness: 5 // Adjust the thickness of the bars
+
                     },
                     {
                         label: 'Electric Total',
                         data: <?php echo json_encode($electricData); ?>,
                         backgroundColor: 'rgba(11,156,49,0.2)',
                         borderColor: 'rgba(54, 162, 235, 1)',
-                        borderWidth: 1
+                        borderWidth: 1,
+                        barThickness: 5 // Adjust the thickness of the bars
+
                     }
                 ]
             },
@@ -196,7 +202,26 @@
 
             alert("The highest value is in " + highestKey + " category.");
         }
+
+        function zoomIn() {
+            var container = document.getElementById("container");
+            var currentWidth = parseInt(container.style.width);
+            var currentHeight = parseInt(container.style.height);
+            container.style.width = (currentWidth + 100) + "px";
+            container.style.height = (currentHeight + 100) + "px";
+        }
+
+        // Function to zoom out
+        function zoomOut() {
+            var container = document.getElementById("container");
+            var currentWidth = parseInt(container.style.width);
+            var currentHeight = parseInt(container.style.height);
+            container.style.width = (currentWidth - 100) + "px";
+            container.style.height = (currentHeight - 100) + "px";
+        }
+        
     </script>
+    
 </body>
 <?php
 include_once("html/footer.html");
