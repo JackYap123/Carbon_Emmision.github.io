@@ -4,7 +4,6 @@
     $db_user = "root";
     $db_pass = "";
     $db_name = "carbon_emmision";
-    $conn = "";
 
     // Attempting database connection
     try {
