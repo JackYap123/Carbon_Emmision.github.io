@@ -49,9 +49,6 @@ $con->close();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/dashboard.css">
-
-   
-
 </head>
 
 <body>
