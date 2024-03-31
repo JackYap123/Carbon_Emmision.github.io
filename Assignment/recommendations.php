@@ -1,7 +1,6 @@
 <?php
-include_once("html/Header.html");
+include_once("header.php");
 include_once("php/config.php");
-session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -31,6 +30,9 @@ if ($result && $result->num_rows > 0) {
     $transportTotal = $row['transport_total'];
     $totalKWH = $row['Total_KHW'];
 }
+
+
+
 
 $recommendations = generateRecommendations($foodTotal, $transportTotal, $totalKWH);
 
@@ -160,6 +162,11 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+<style>
+    a{
+        color: inherit;
+    }
+</style>
 
 <body>
     <div id="mainContent">
