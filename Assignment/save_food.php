@@ -6,9 +6,6 @@ error_reporting(E_ALL);
 include_once("php/config.php");
 session_start();
 
-
-
-
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Establish connection to your database
@@ -21,6 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+
     $diet = $_POST['diet'];
     $meat = $_POST['meat'];
     $vegetable = $_POST['vegetable'];
@@ -38,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $time_span_months = isset($_POST['TPH']) ? $_POST['TPH'] : null;
     $carbon_intensity = isset($_POST['CI']) ? $_POST['CI'] : null;
     $food_total = 0;
+
     switch ($diet) {
         case 'Omnivore':
             $food_total = ($meat * 40) + ($vegetable * 0.3);
@@ -101,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'High Way':
                     $road_number = 200;
                     break;
-                case 'Rural Roads';
+                case 'Rural Roads':
                     $road_number = 120;
                     break;
                 case 'Dash':
@@ -137,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'High Way':
                     $road_number = 200;
                     break;
-                case 'Rural Roads';
+                case 'Rural Roads':
                     $road_number = 120;
                     break;
                 case 'Dash':
@@ -170,6 +173,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Total_Time_Span = $carbon_intensity * $average_kwh / ($time_span_months * 30);
     $Total_Time_Span_Month = $Total_Time_Span * $time_span_months;
     $id = $_SESSION['user_Id'];
+    // Assuming $result is the result of your database query
+    if ($result->num_rows > 0) {
+        // Fetch the latest submission record
+        $row = $result->fetch_assoc();
+
+        // Get the submit time from the database record
+        $submit_time = strtotime($row['Submit_Time']);
+
+        // Get the current time
+        $time_now = time();
+
+        // Calculate the time difference in seconds
+        $time_difference_seconds = $time_now - $submit_time;
+
+        // Check if the last submission was made more than 24 hours ago (86400 seconds in 24 hours)
+        if ($time_difference_seconds > 86400) {
+            // Set the notification count to 1
+            $_SESSION['notification_count'] = 1;
+        } else {
+            // Set the notification count to 0
+            $_SESSION['notification_count'] = 0;
+        }
+    } else {
+        // If there are no results, set the notification count to 0
+        $_SESSION['notification_count'] = 0;
+    }
 
 
     // Insert data into the database
@@ -178,45 +207,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
 
-        // Set $total_food in a session variable
+        // Set session variables
         $_SESSION['food_total'] = $food_total;
         $_SESSION['transport_total'] = $transport_total;
         $_SESSION['Total_KHW'] = $Total_KHW;
         $_SESSION['Total_Time_Span'] = $Total_Time_Span;
         $_SESSION['Total_Time_Span_Month'] = $Total_Time_Span_Month;
+
+
+        // Reset notification count
         $_SESSION['notification_count'] = 0;
+        $time = $_SESSION['notification_count'];
 
 
-        header("Location: historical.php?");
+        $time = $_SESSION['notification_count'];
+        // Update the submission time
+        $time++;
+
+        $_SESSION['notification_count'] = $time;
+        // Redirect to historical.php
+
+        // header("Location: historical.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
+
+
     // Close database connection
-    if (!isset($_SESSION['notification_count'])) {
-        $_SESSION['notification_count'] = 0;
-    }
-
-    // Check if the form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Your existing code for processing form submission...
-
-        // Database connection and data insertion...
-
-        // Close database connection
-        $conn->close();
-
-        // Increment notification count if necessary
-        $user_id = $_SESSION['user_Id'];
-        $sql_check = "SELECT * FROM food_carbon_emission WHERE user_Id = $user_id AND DATE(created_at) = CURDATE()";
-        $result_check = $conn->query($sql_check);
-
-        if ($result_check->num_rows == 0) {
-            // User hasn't submitted data for the current day, increment notification count
-            $_SESSION['notification_count']++;
-            var_dump($_SESSION['notification_count']);
-        }
-    }
-
+    $conn->close();
 }

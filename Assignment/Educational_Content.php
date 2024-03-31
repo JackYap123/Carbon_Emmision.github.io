@@ -1,6 +1,6 @@
 <?php
     include_once "php/config.php";
-    include_once "html/header.html";
+    include_once "header.php";
 ?>
 
 <!DOCTYPE html>

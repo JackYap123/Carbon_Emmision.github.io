@@ -1,10 +1,9 @@
 <?php
 include_once("php/config.php");
-session_start();
-
+include_once("header.php");
 if (!isset($_SESSION['user_Id'])) {
   // Redirect user to login page if not logged in
-  header("Location: home_pages.php");
+  header("Location: home_page.php");
   exit();
 }
 
