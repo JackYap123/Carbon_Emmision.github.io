@@ -2,6 +2,11 @@
     font-family: "ubuntu", sans-serif;
 }
 
+h1{
+    font-weight: bold;
+}
+
+
 header, body{
     margin: 0;
     padding: 0;
