@@ -2,6 +2,9 @@
 body {
     font-family: Arial, sans-serif;
 }
+header{
+    position: relative;
+}
 
 .container {
     max-width: 800px;
@@ -28,8 +31,6 @@ li {
 li h2 {
     margin-top: 0;
 }
-<<<<<<< Eco_Events_Calendar
-
 .admin-upload {
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -40,5 +41,3 @@ li h2 {
 li h2 {
     margin-top: 0;
 }
-=======
->>>>>>> main
