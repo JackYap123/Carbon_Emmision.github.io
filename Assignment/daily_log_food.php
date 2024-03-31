@@ -143,8 +143,8 @@
                         <div class="form-group-id">
                             <select id="motor-type-select" name="motorType">
                                 <option>Please Select Motor Type</option>
-                                <option value="AC-motor">Alternating Current</option>
-                                <option value="DC-motor">Direct Current</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Sport">Sport</option>
                             </select>
                         </div>
                     </div>
@@ -155,9 +155,9 @@
                         <div class="form-group-id">
                             <select id="motor-gas-select" name="motorGas">
                                 <option>Please Select Motor Gasoline</option>
-                                <option value="Multigrade-Oil">Multigrade Oil</option>
-                                <option value="Synthetic-Oil">Synthetic Oil</option>
-                                <option value="High-Mileage-Oil">High Mileage Oil</option>
+                                <option value="Gasoline">Gasoline</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Propane">Propane</option>
                             </select>
                         </div>
                     </div>
