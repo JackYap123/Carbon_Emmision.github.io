@@ -274,7 +274,7 @@ function validateFormTransportation() {
         return false;
     } else if (carSelect == "Public Transport") {
         if (pbTypeSelect == "Please Select Public Transport Type" || distance == "")
-            pbTypeSelect == "Please Select Public Transport Type";
+            alert("Please Field Out the All the Public Transport Type section")
     }
     return true;
 }
