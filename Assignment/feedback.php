@@ -26,7 +26,7 @@
     <div id="container1">
         <h1 class="head-title">User Feedback Survey</h1>
         <p class="content" style="margin-bottom: 2em;">Help us improve! Share your thoughts in our quick User Feedback Survey to shape the future of our app.</p>
-        <button id="scroll">Learn More</button>
+        <button id="scroll">Leave Feedback</button>
     </div>
     <div id="container2">
         <h2 class="content-title">Introduction</h2>
@@ -120,6 +120,7 @@
             </div>
         </div>
     </form>
+<script src="js/feedback.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
