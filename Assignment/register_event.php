@@ -1,6 +1,6 @@
 <?php
 // Include database connection
-include 'config.php';
+include 'php/config.php';
 
 // Get data from the form
 $eventName = $_POST['eventName'];

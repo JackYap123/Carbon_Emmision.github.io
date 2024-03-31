@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco Events Calendar</title>
     <link rel="stylesheet" href="css/EcoEventsCalendar.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+    <?php
+        include_once("header.php");
+    ?>
 </head>
 <body>
     <div class="container">
@@ -51,7 +55,7 @@
      <!-- Admin Upload Event Form -->
     <div id="uploadEventForm" class="hidden">
         <h2>Upload Event</h2>
-        <form action="php/upload_event.php" method="post">
+        <form action="upload_event.php" method="post">
             <label for="title">Event Title:</label><br>
             <input type="text" id="title" name="title" required><br>
             <label for="description">Description:</label><br>
@@ -71,7 +75,7 @@
     <!-- User Registration Form -->
     <div id="registrationForm" class="hidden">
         <h2>Event Registration</h2>
-        <form action="php/register_event.php" method="post">
+        <form action="register_event.php" method="post">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br>
             <label for="email">Email:</label><br>
