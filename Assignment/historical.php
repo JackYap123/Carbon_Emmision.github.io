@@ -24,22 +24,22 @@ $username = "root";
 $password = "";
 $database = "carbon_emmision";
 
-$conn = new mysqli($servername, $username, $password, $database);
+$con = new mysqli($servername, $username, $password, $database);
 
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if ($con->connect_error) {
+  die("Connection failed: " . $con->connect_error);
 }
 
 // Step 2: Query Database for the latest row
 $sql = "SELECT food_total, transport_total,Total_KHW FROM food_carbon_emission WHERE user_Id = $user_id ORDER BY Id DESC LIMIT 1";
-$result = $conn->query($sql);
+$result = $con->query($sql);
 
 // Step 3: Data Processing
 $latestData = $result->fetch_assoc(); // Fetch the latest row
 
 // Step 6: Close Connection
-$conn->close();
+$con->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
