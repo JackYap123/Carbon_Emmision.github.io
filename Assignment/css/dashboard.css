@@ -59,18 +59,18 @@ header {
 }
 
 /* Style for the select element */
-.sortOrder {
+#sortOrder {
     font-family: Arial, sans-serif;
     font-size: 16px;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #595656;
     border-radius: 4px;
     background-color: #fff;
     color: #333;
 }
 
 /* Style for the option elements */
-.sortOrder option {
+#sortOrder option {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #333;
@@ -78,12 +78,12 @@ header {
 }
 
 /* Style for the option elements when hovered */
-.sortOrder option:hover {
+#sortOrder option:hover {
     background-color: #f0f0f0;
 }
 
 /* Style for the option elements when selected */
-.sortOrder option:checked {
+#sortOrder option:checked {
     background-color: #007bff;
     color: #fff;
 }

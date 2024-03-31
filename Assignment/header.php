@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
     // Step 5: Calculate time difference in minutes
     $current_time = time();
     $time_difference_minutes = ($current_time - $submit_time) / 60;
-    if ($time_difference_minutes > 1440) {
+    if ($time_difference_minutes >1440) {
         // If the difference is greater than 24 hours, set notification count to 1
         $_SESSION['notification_count'] = 1;
     } else if ($time_difference_minutes < 1440){
@@ -80,6 +80,7 @@ $con->close();
                 <a href="dashboard.php" class="navi">Historical</a>
                 <a href="Educational_Content.php" class="navi">Learn</a>
                 <a href="recommendations.php" class="navi">Recommendation</a>
+                <a href="Eco_Events_Calendar.php" class="navi">Event Calander</a>
 
                 <span class="notification-icon">
                     <i class="fas fa-bell"></i>

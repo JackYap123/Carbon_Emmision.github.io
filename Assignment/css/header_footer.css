@@ -11,7 +11,6 @@ header {
     background-color: #faf9ef;
     position: fixed;
     width: 100%;
-    z-index: 1;
 }
 
 button {
@@ -57,6 +56,7 @@ a {
     margin-right: 24px;
     margin-top: 8px;
     margin-bottom: 8px;
+    cursor: pointer;
     transition: color 200ms ease-out;
 }
 .navi:hover {
@@ -95,7 +95,4 @@ footer {
 .foot_container {
     display: grid;
     margin-left: 2.5em;
-}
-.notification-icon{
-    margin-top: 2.5em;
 }

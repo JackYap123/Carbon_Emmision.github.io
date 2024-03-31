@@ -2,11 +2,16 @@
 body {
     font-family: Arial, sans-serif;
 }
+header{
+    position: relative;
+    z-index: 0;
+}
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 120px;
 }
 
 h1 {
@@ -28,8 +33,6 @@ li {
 li h2 {
     margin-top: 0;
 }
-<<<<<<< Eco_Events_Calendar
-
 .admin-upload {
     margin-top: 20px;
     border: 1px solid #ccc;
@@ -40,5 +43,3 @@ li h2 {
 li h2 {
     margin-top: 0;
 }
-=======
->>>>>>> main

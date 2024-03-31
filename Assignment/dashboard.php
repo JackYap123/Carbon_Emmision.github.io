@@ -49,9 +49,6 @@ $con->close();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/dashboard.css">
-
-   
-
 </head>
 
 <body>
@@ -67,6 +64,8 @@ $con->close();
         <option value="asc">Lowest First</option>
         <option value="desc">Highest First</option>
     </select>
+    <button id="compareButton" onclick="compareHighest()">Compare Highest</button>
+    
     <button onclick="zoomIn()">Zoom In</button>
     <button onclick="zoomOut()">Zoom Out</button>
 
@@ -88,7 +87,6 @@ $con->close();
         ?>
     </table>
 
-    <button id="compareButton" onclick="compareHighest()">Compare Highest</button>
 
     <script>
         // Step 5: Render

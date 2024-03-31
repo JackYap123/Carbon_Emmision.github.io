@@ -143,8 +143,8 @@
                         <div class="form-group-id">
                             <select id="motor-type-select" name="motorType">
                                 <option>Please Select Motor Type</option>
-                                <option value="AC-motor">Alternating Current</option>
-                                <option value="DC-motor">Direct Current</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Sport">Sport</option>
                             </select>
                         </div>
                     </div>
@@ -155,9 +155,9 @@
                         <div class="form-group-id">
                             <select id="motor-gas-select" name="motorGas">
                                 <option>Please Select Motor Gasoline</option>
-                                <option value="Multigrade-Oil">Multigrade Oil</option>
-                                <option value="Synthetic-Oil">Synthetic Oil</option>
-                                <option value="High-Mileage-Oil">High Mileage Oil</option>
+                                <option value="Gasoline">Gasoline</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Propane">Propane</option>
                             </select>
                         </div>
                     </div>
@@ -193,16 +193,8 @@
                 <div class="row">
                     <div class="col">
                         <div id="AMK" class="row">
-                            <label for="avrageKHW">Submit Average khw (kilowatt per hours)</label>
-                            <input type="number" id="avrageKHW" name="avrageKHW" min="0" placeholder="Exm: 1000">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div id="Time-Span-Hours" class="row">
-                            <label for="TPH">Time Span(Months)</label>
-                            <input type="number" id="TPH" name="TPH" min="0" placeholder="Exm: 12">
+                            <label for="electricity_consumption">Electricity_consumption</label>
+                            <input type="number" id="electricity_consumption" name="electricity_consumption" min="0" placeholder="Exm: 1000">
                         </div>
                     </div>
                 </div>
@@ -210,7 +202,7 @@
                     <div class="col">
                         <div id="Carbon-Intensity" class="row">
                             <label for="Carbon-Intensity">Carbon Intensity</label>
-                            <input type="number" id="CI" name="CI" min="0" placeholder="Exm: 72">
+                            <input type="number" id="Carbon-Intensity" name="Carbon-Intensity" min="0" placeholder="Exm: 72">
                         </div>
                     </div>
                 </div>
