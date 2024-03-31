@@ -1,6 +1,6 @@
 <?php
     include "html/header.html";
-    include "database.php";
+    include "php/config.php";
 ?>
 
 <!DOCTYPE html>
@@ -135,7 +135,7 @@
         $feedback = $_POST["feedback"];
 
         $sql = ("INSERT INTO `user_feedback`(`user_interface`, `feature_satisfaction`, `preferences`, `feedback`) VALUES ('$user_interface','$feature','$preference','$feedback')");
-        mysqli_query($conn, $sql);
+        mysqli_query($con, $sql);
 
         echo "<script>alert('Submitted');</script>";
     }
