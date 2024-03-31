@@ -5,55 +5,12 @@
     <title>Dashboard Diagram</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <link rel="stylesheet" href="css/header_footer.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 
     <?php
     include("header.php");
     ?>
-    <style>
-        #myTable {
-            border-collapse: collapse;
-            width: 100%;
-        }
 
-        #myTable th,
-        #myTable td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        #myTable th {
-            background-color: #f2f2f2;
-            color: #333;
-        }
-
-        #myTable tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        #myTable tr:hover {
-            background-color: #ddd;
-        }
-
-        #compareButton {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .message-container {
-            padding: 20px;
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -61,7 +18,7 @@
         <canvas id="myChart" width="400" height="400"></canvas>
     </div>
 
-    
+
 
     <!-- Dropdown box to select sorting order -->
     <label for="sortOrder">Sort Order:</label>
@@ -71,7 +28,6 @@
     </select>
 
     <?php
-    session_start();
     // Step 1: Database Connection
     $servername = "localhost";
     $username = "root";
@@ -103,11 +59,12 @@
             $transportData[] = $row['transport_total'];
             $electricData[] = $row['Total_KHW'];
         }
-    }else {
+    } else {
         echo "<<div class='message-container'>
         You haven't submitted any data before.
         </div><br>";
-        echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";    }
+        echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";
+    }
 
     // Step 6: Close Connection
     $conn->close();
@@ -122,9 +79,9 @@
         <?php
         for ($i = 0; $i < count($foodData); $i++) {
             echo "<tr>";
-            echo "<td>" . $foodData[$i] . "</td>";
-            echo "<td>" . $transportData[$i] . "</td>";
-            echo "<td>" . $electricData[$i] . "</td>";
+            echo "<td class='chart-colors'>" . $foodData[$i] . "</td>";
+            echo "<td class='chart-colors2'>" . $transportData[$i] . "</td>";
+            echo "<td class='chart-colors3'>" . $electricData[$i] . "</td>";
             echo "</tr>";
         }
         ?>
@@ -242,7 +199,7 @@
     </script>
 </body>
 <?php
-    include_once("html/footer.html");
+include_once("html/footer.html");
 ?>
 
 </html>
