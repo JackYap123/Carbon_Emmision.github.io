@@ -1,7 +1,7 @@
 <?php
     // Including necessary files: database connection, header, and URL loader
     include "database.php";
-    include "html/header.html";
+    include "header.php";
     include "url_loader.php";
 ?>
 
