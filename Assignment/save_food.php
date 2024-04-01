@@ -186,16 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
 
         // Reset notification count
-        $_SESSION['notification_count'] = 0;
-        $time = $_SESSION['notification_count'];
-
-
-        $time = $_SESSION['notification_count'];
-        // Update the submission time
-        $time++;
-
-        $_SESSION['notification_count'] = $time;
-        // Redirect to historical.php
+       
 
         header("Location: historical.php");
         exit();
