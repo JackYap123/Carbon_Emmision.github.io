@@ -64,7 +64,7 @@ if (!isset($_SESSION['valid'])) {
                 }
             ?>
                 <header>Change Profile</header>
-                <form action="" method="post">
+                <form action="" method="post" onsubmit="return validateForm()">
                     <div class="field input">
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username" value="<?php echo $res_Uname; ?>" autocomplete="off" required>
@@ -115,6 +115,7 @@ if (!isset($_SESSION['valid'])) {
                 </form>
         </div>
     <?php } ?>
+    <script src="js/formValidationLogin.js"></script>
     </div>
 </body>
 
