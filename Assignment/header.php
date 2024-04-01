@@ -33,10 +33,7 @@ if ($result->num_rows > 0) {
     }
 
     // Step 6: Perform your calculations or checks based on $time_difference_minutes
-} else {
-    echo "No submit time found for the user.";
-}
-
+} 
 // Step 7: Close Connection
 $con->close();
 

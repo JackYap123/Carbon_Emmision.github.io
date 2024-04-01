@@ -29,12 +29,22 @@ session_start();
                 $row = mysqli_fetch_assoc($result);
 
                 if (is_array($row) && !empty($row)) {
-                    $_SESSION['valid'] = $row['Email'];
-                    $_SESSION['username'] = $row['UserName'];
-                    $_SESSION['age'] = $row['Age'];
-                    $_SESSION['user_Id'] = $row['user_Id'];
-                    header("Location: home_page.php");
-                    exit;
+                    if ($row['UserName'] == "admin") { // Check if the user is an admin
+                        $_SESSION['valid'] = $row['Email'];
+                        $_SESSION['username'] = $row['UserName'];
+                        $_SESSION['age'] = $row['Age'];
+                        $_SESSION['user_Id'] = $row['user_Id'];
+                        header("Location: admin_home.php"); // Redirect to admin panel
+                        exit;
+                    }
+                    else{
+                        $_SESSION['valid'] = $row['Email'];
+                        $_SESSION['username'] = $row['UserName'];
+                        $_SESSION['age'] = $row['Age'];
+                        $_SESSION['user_Id'] = $row['user_Id'];
+                        header("Location: home_page.php");
+                        exit;
+                    }
                 } else {
                     echo "<div class='message'>
                             <p>Wrong Username or Password</p>
