@@ -39,13 +39,13 @@ $recommendations = generateRecommendations($foodTotal, $transportTotal, $totalKW
 
 function generateRecommendations($foodTotal, $transportTotal, $totalKWH) {
     $recommendations = [];
-    if ($foodTotal > 50) {
+    if ($foodTotal > 4550) {
         $recommendations[] = "Consider reducing meat consumption and increasing plant-based foods.";
     }
-    if ($transportTotal > 100) {
+    if ($transportTotal > 5200) {
         $recommendations[] = "Consider using public transportation, biking, or walking.";
     }
-    if ($totalKWH > 200) {
+    if ($totalKWH > 29000) {
         $recommendations[] = "Consider reducing unnecessary use of electrical devices and switching to energy-saving products.";
     }
     return $recommendations;
