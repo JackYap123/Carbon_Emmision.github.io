@@ -97,6 +97,5 @@ $con->close();
         </div>
     </header>
 </body>
-<script src="js/Header.js"></script>
 
 </html>

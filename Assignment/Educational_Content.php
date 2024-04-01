@@ -1,5 +1,5 @@
 <?php
-    include "database.php";
+    include "php/config.php";
     include "header.php";
     include "url_loader.php";
 ?>
