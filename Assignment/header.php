@@ -22,18 +22,18 @@ if ($result->num_rows > 0) {
     // Step 5: Calculate time difference in minutes
     $current_time = time();
     $time_difference_minutes = ($current_time - $submit_time) / 60;
-    if ($time_difference_minutes >1440) {
+    if ($time_difference_minutes > 1440) {
         // If the difference is greater than 24 hours, set notification count to 1
         $_SESSION['notification_count'] = 1;
-    } else if ($time_difference_minutes < 1440){
+    } elseif ($time_difference_minutes < 1440) {
         // If the difference is not greater than 24 hours, set notification count to 0
         $_SESSION['notification_count'] = 0;
-    }else{
+    } else {
         $_SESSION['notification_count']  = 11;
     }
 
     // Step 6: Perform your calculations or checks based on $time_difference_minutes
-} 
+}
 // Step 7: Close Connection
 $con->close();
 
@@ -50,17 +50,17 @@ $con->close();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../JS/header.js"></script>
     <script>
-    $(document).ready(function() {
-        // Function to show alert message when notification icon is clicked
-        $('.notification-icon').click(function() {
-            // Check if notification count is greater than 0
-            var notificationCount = parseInt($('.notification-counter').text());
-            if (notificationCount > 0) {
-                alert('You have ' + notificationCount + ' notifications.');
-            }
+        $(document).ready(function() {
+            // Function to show alert message when notification icon is clicked
+            $('.notification-icon').click(function() {
+                // Check if notification count is greater than 0
+                var notificationCount = parseInt($('.notification-counter').text());
+                if (notificationCount > 0) {
+                    alert('You have ' + notificationCount + ' notifications.');
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 
 </head>
@@ -83,16 +83,28 @@ $con->close();
 
                 <span class="notification-icon">
                     <i class="fas fa-bell"></i>
-                    <span class="notification-counter"><?php echo ($_SESSION['notification_count']);?></span>
+                    <span class="notification-counter"><?php echo ($_SESSION['notification_count']); ?></span>
                     <!-- Example: Displaying initial count -->
                 </span>
+
             </nav>
 
-            <div class="right">
+            <div class="right" style="padding-left:100px">
                 <button id="profile_button"><a href="User_Edit_Profile.php">Profile</a></button>
             </div>
+            <div class="right">
+                <button id="profile_button"><a href="Register.php">Register</a></button>
+            </div>
         </div>
-    </header>
+
+        <script>
+            // JavaScript to handle hiding register button and showing profile button
+
+
+            // Call this function when registration is completed
+            // For example, you can call it after a successful registration process
+            // For demonstration, I'm just calling it after 3 seconds
+        </script>
 </body>
 
 </html>

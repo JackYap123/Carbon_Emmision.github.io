@@ -62,7 +62,7 @@
 
                     <div class="field input">
                         <label for="age">Age</label>
-                        <input type="number" name="age" id="age" autocomplete="new-password" required>
+                        <input type="number" name="age" id="age" autocomplete="" required>
                     </div>
 
                     <div class="field input">
@@ -103,7 +103,6 @@
         </div>
     <?php } ?>
     </div>
-
 </body>
 
 </html>
