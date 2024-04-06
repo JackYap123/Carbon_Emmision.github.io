@@ -17,16 +17,18 @@ if ($con->connect_error) {
 $id = $_SESSION['user_Id'];
 
 // Step 2: Query Database
-$sql = "SELECT food_total, transport_total, Total_KHW FROM food_carbon_emission WHERE user_Id = $id";
+$sql = "SELECT food_total, transport_total, Total_KHW, date_created FROM food_carbon_emission WHERE user_Id = $id";
 $result = $con->query($sql);
 
 // Step 3: Data Processing
+$dateCreated = [];
 $foodData = [];
 $transportData = [];
 $electricData = [];
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
+        $dateCreated[] = $row['date_created'];
         $foodData[] = $row['food_total'];
         $transportData[] = $row['transport_total'];
         $electricData[] = $row['Total_KHW'];
@@ -53,7 +55,7 @@ $con->close();
 
 <body>
     <div id="container-1">
-        <div id="container" style="width: 500px;height: 500px; z-index: 0;">
+        <div id="container" style="width:700px; height: 700px;z-index:0; margin-left:25%">
             <canvas id="myChart" width="400" height="400"></canvas>
         </div>
         <div class="tooltip">
@@ -63,11 +65,20 @@ $con->close();
     </div>
 
     <!-- Dropdown box to select sorting order -->
-    <label for="sortOrder">Sort Order:</label>
-    <select id="sortOrder">
-        <option value="asc">Lowest First</option>
-        <option value="desc">Highest First</option>
-    </select>
+    <div class="custom-select">
+        <label for="sortOrder" class="label">Sort Order:</label>
+        <select id="sortOrder" onchange="sortTable(this.value)" class="select">
+            <option value="asc0">Lowest Food</option>
+            <option value="asc1">Lowest Transport</option>
+            <option value="asc2">Lowest Electric</option>
+            <option value="desc0">Highest Food</option>
+            <option value="desc1">Highest Transport</option>
+            <option value="desc2">Highest Electric</option>
+        </select>
+        <div class="select-arrow"></div>
+    </div>
+
+
     <button id="compareButton" onclick="compareHighest()">Compare Highest</button>
 
     <button onclick="zoomIn()">Zoom In</button>
@@ -77,6 +88,7 @@ $con->close();
         <figcaption>Carbon Emission Table</figcaption>
         <table id="myTable">
             <tr>
+                <th>Date and Time</th>
                 <th>Food Total</th>
                 <th>Transport Total</th>
                 <th>Electric Total</th>
@@ -84,6 +96,7 @@ $con->close();
             <?php
             for ($i = 0; $i < count($foodData); $i++) {
                 echo "<tr>";
+                echo "<td class='chart-colors4'>" . $dateCreated[$i] .  "</td>";
                 echo "<td class='chart-colors'>" . $foodData[$i] . "</td>";
                 echo "<td class='chart-colors2'>" . $transportData[$i] . "</td>";
                 echo "<td class='chart-colors3'>" . $electricData[$i] . "</td>";

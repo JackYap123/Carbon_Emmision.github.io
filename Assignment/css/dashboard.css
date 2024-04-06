@@ -54,6 +54,12 @@
     border-color: rgba(11, 156, 49, 1);
 }
 
+.chart-colors4 {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Red for food total */
+    border-color: rgba(0, 0, 0, 1);
+}
+
 header {
     position: relative;
 }
@@ -88,12 +94,13 @@ header {
     color: #fff;
 }
 
-#container-1{
+#container-1 {
     display: flex;
     flex: 2;
 }
 
-#tooltip{
+
+#tooltip {
     display: flex;
     flex: 1;
 }
@@ -115,7 +122,7 @@ header {
     z-index: 1;
     top: -30px;
     left: 50%;
-    margin-left: -60px;
+    margin-left: 20px;
 }
 
 .tooltip:hover .tooltiptext {
@@ -125,4 +132,62 @@ header {
 .question-icon {
     width: 20px;
     height: 20px;
+}
+
+figure {
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid #3e3a3a;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the caption */
+figcaption {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.select {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.select:hover {
+    background-color: #e0e0e0;
+}
+
+.select-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-10%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+    pointer-events: none;
 }
