@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +10,13 @@ session_start();
 
     <title>Food Tracker</title>
 </head>
-
+<style>
+    
+</style>
 
 <body>
     <?php
-    include_once("html/header.html");
+    include_once("header.php");
     ?>
     <!-- Form 1 -->
     <div class="container">
@@ -56,7 +55,7 @@ session_start();
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label>Have you wasted food?</label><br>
+                            
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="wasted_food" id="wasted-food-yes" value="Yes" onchange="showWasteInput()()">
                                 <label class="form-check-label" for="wasted-food-yes">Yes</label>
@@ -99,7 +98,7 @@ session_start();
                 <!-- select car type -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-type-select" name="CarType">
                                 <option>Please Select Car type</option>
                                 <option value="HatchBack">Hatchback</option>
@@ -113,7 +112,7 @@ session_start();
                 <!-- select Car Gas -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-gas-select" name="Cargas">
                                 <option>Please Select Car Gasoline</option>
                                 <option value="Petrol">Petrol</option>
@@ -127,7 +126,7 @@ session_start();
                 <!-- select Road -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="car-road-select" name="Road">
                                 <option>Please Select Road type</option>
                                 <option value="MainRoad">Main Road</option>
@@ -141,11 +140,11 @@ session_start();
                 <!-- select Motor Type -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="motor-type-select" name="motorType">
                                 <option>Please Select Motor Type</option>
-                                <option value="AC-motor">Alternating Current</option>
-                                <option value="DC-motor">Direct Current</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Sport">Sport</option>
                             </select>
                         </div>
                     </div>
@@ -153,19 +152,19 @@ session_start();
                 <!-- select Motor Oil -->
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="motor-gas-select" name="motorGas">
                                 <option>Please Select Motor Gasoline</option>
-                                <option value="Multigrade-Oil">Multigrade Oil</option>
-                                <option value="Synthetic-Oil">Synthetic Oil</option>
-                                <option value="High-Mileage-Oil">High Mileage Oil</option>
+                                <option value="Gasoline">Gasoline</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Propane">Propane</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="form-group">
+                        <div class="form-group-id">
                             <select id="pb-type-select" name="pbType">
                                 <option>Please Select Public Transport Type</option>
                                 <option value="Bus">Bus</option>
@@ -194,16 +193,8 @@ session_start();
                 <div class="row">
                     <div class="col">
                         <div id="AMK" class="row">
-                            <label for="avrageKHW">Submit Average khw (kilowatt per hours)</label>
-                            <input type="number" id="avrageKHW" name="avrageKHW" min="0" placeholder="Exm: 1000">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div id="Time-Span-Hours" class="row">
-                            <label for="TPH">Time Span(Months)</label>
-                            <input type="number" id="TPH" name="TPH" min="0" placeholder="Exm: 12">
+                            <label for="electricity_consumption">Electricity_consumption</label>
+                            <input type="number" id="electricity_consumption" name="electricity_consumption" min="0" placeholder="Exm: 1000">
                         </div>
                     </div>
                 </div>
@@ -211,7 +202,7 @@ session_start();
                     <div class="col">
                         <div id="Carbon-Intensity" class="row">
                             <label for="Carbon-Intensity">Carbon Intensity</label>
-                            <input type="number" id="CI" name="CI" min="0" placeholder="Exm: 72">
+                            <input type="number" id="Carbon-Intensity" name="Carbon-Intensity" min="0" placeholder="Exm: 72">
                         </div>
                     </div>
                 </div>
@@ -221,7 +212,7 @@ session_start();
         </form>
     </div>
     <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <div id="progress-bar" class="progress-bar" role="progressbar" style="width:0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     </div>
     <?php

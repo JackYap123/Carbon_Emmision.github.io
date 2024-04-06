@@ -1,8 +1,9 @@
-document.getElementById("diet-select").addEventListener("change", function() {
+document.getElementById("diet-select").addEventListener("change", function () {
     var selectedValue = this.value;
     var meatRow = document.getElementById("meat-grams");
     var vegRow = document.getElementById("vegetable-grams");
     var wasteRow = document.getElementById("waste-row");
+
 
 
     if (selectedValue === "Omnivore") {
@@ -20,7 +21,7 @@ document.getElementById("diet-select").addEventListener("change", function() {
 });
 
 //This is for the car carbon item will be appear or disappear function
-document.getElementById("car-select").addEventListener("change", function() {
+document.getElementById("car-select").addEventListener("change", function () {
     var selectedValued = this.value;
     var carGas = document.getElementById("car-gas-select");
     var carType = document.getElementById("car-type-select");
@@ -74,7 +75,7 @@ document.getElementById("car-select").addEventListener("change", function() {
     }
 });
 // When choose lorry the 
-document.getElementById("car-type-select").addEventListener("change", function() {
+document.getElementById("car-type-select").addEventListener("change", function () {
     var carGasSelect = document.getElementById("car-gas-select");
     var selectedCarType = this.value;
     var selectedCarGas = carGasSelect.value;
@@ -88,7 +89,7 @@ document.getElementById("car-type-select").addEventListener("change", function()
         carGasSelect.disabled = false;
     }
 });
-document.getElementById("car-gas-select").addEventListener("change", function() {
+document.getElementById("car-gas-select").addEventListener("change", function () {
     var carTypeSelect = document.getElementById("car-type-select");
     var selectedCarType = carTypeSelect.value;
 
@@ -114,13 +115,25 @@ function hideWasteInput() {
     var wasteLabel = document.getElementById('waste-label');
     wasteLabel.style.display = 'none';
 }
+var currentPage = 1;
+var totalPages = 4;
+function updateProgressBar() {
+    var progress = Math.ceil((currentPage / totalPages) * 100);
+    document.getElementById("progress-bar").style.width = progress + "%";
+    document.getElementById("progress-bar").innerHTML = progress + "%";
+}
+
+
 //First page go to the second page
 function nextPage1() {
     if (validateFormFood()) {
         document.getElementById('page1').classList.remove('active');
+        currentPage++;
         document.getElementById('page2').classList.add('active');
+        updateProgressBar();
         document.getElementById('page1-btn').classList.remove('active');
         document.getElementById('page2-btn').classList.add('active');
+
     } else {
         alert("Please fill out all required fields before proceeding.");
     }
@@ -128,7 +141,9 @@ function nextPage1() {
 // Second Page go back to the first page
 function prevPage1() {
     document.getElementById('page2').classList.remove('active');
+    currentPage--;
     document.getElementById('page1').classList.add('active');
+    updateProgressBar();
     document.getElementById('page2-btn').classList.remove('active');
     document.getElementById('page1-btn').classList.add('active');
 }
@@ -136,29 +151,27 @@ function prevPage1() {
 function nextPage2() {
     if (validateFormTransportation()) {
         document.getElementById('page2').classList.remove('active');
+        currentPage++;
         document.getElementById('page3').classList.add('active');
+        updateProgressBar();
         document.getElementById('page2-btn').classList.remove('active');
         document.getElementById('page3-btn').classList.add('active');
+    } else {
+        alert("Please fill out all required fields before proceeding.");
     }
 }
 
 function prevPage2() {
     document.getElementById('page3').classList.remove('active');
+    currentPage--;
     document.getElementById('page2').classList.add('active');
+    updateProgressBar();
     document.getElementById('page3-btn').classList.remove('active');
     document.getElementById('page2-btn').classList.add('active');
 }
 
 //The first page if havn't submit all of the part, you couldn't go to the next page
-function validateAndSubmitForm() {
-    if (validateFormFood()) { // If form validation passes
-        nextPage1(); // Navigate to the next page
-        return true;
-    } else {
-        alert("Please fill out all required fields before proceeding.");
-        return false;
-    }
-}
+
 // Function to reset form values and display states
 function resetForm() {
     // Reset first form (diet-select)
@@ -224,6 +237,8 @@ function validateFormFood() {
     return true;
 }
 
+
+
 function validateFormTransportation() {
     var carSelect = document.getElementById("car-select").value;
     var carTypeSelect = document.getElementById("car-type-select").value;
@@ -233,8 +248,6 @@ function validateFormTransportation() {
     var motorGasSelect = document.getElementById("motor-gas-select").value;
     var pbTypeSelect = document.getElementById("pb-type-select").value;
     var distance = document.getElementById("Distance").value;
-
-    // || carTypeSelect == "Please Select Car type" || carGasSelect == "Please Select Car Gasoline" || carRoadSelect == "Please Select Road type" || motorTypeSelect == "Please Select Motor Type" || motorGasSelect == "Please Select Motor Gasoline" || pbTypeSelect == "Please Select Public Transport Type" || distance == ""
 
     if (carSelect == "Please Select Your Transpotation") {
         alert("Please Field Out the transpotation");
@@ -246,12 +259,15 @@ function validateFormTransportation() {
             return false;
         }
     } else if (carSelect == "Motorcycle") {
-        if (motorTypeSelect == "Please Select Motor Type" || motorGasSelect == "Please Select Motor Gasoline" || carRoadSelect == "Please Select Road type" || distance == "")
+        if (motorTypeSelect == "Please Select Motor Type" || motorGasSelect == "Please Select Motor Gasoline" || carRoadSelect == "Please Select Road type" || distance == ""){
             alert("Please Field Out the All the Motorcycle section");
-        return false;
-    } else if (carSelect == "Public Transport") {
-        if (pbTypeSelect == "Please Select Public Transport Type" || distance == "")
-            pbTypeSelect == "Please Select Public Transport Type";
+            return false;
+        }
+    } else if (carSelect == "Public-Transport") {
+        if (pbTypeSelect == "Please Select Public Transport Type" || distance == ""){
+            alert("Please Field Out the All the Public Transport Type section");
+            return false;
+        }
     }
     return true;
 }

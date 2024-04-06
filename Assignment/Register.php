@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Login_Page_User.css">
-    <link rel="javascript" href="js/register_rules.js">
     <title>Register</title>
 </head>
 
@@ -36,15 +35,15 @@
                     mysqli_query($con, "INSERT INTO users (Username, Email, Age, Password, food, commuting_method, energy) VALUES ('$username', '$email', '$age', '$password', '$food', '$commuting_method', '$energy')") or die("Error Occupied");
 
                     echo "<div class='message'>
-                    <p> Resgitration Successfully</p>
+                    <p> Registration Successfully</p>
                   </div>,<br>";
 
-                    echo "<a href='Login_Page_User.php'><button class='btn'>Login in now</button>";
+                    echo "<a href='Login_Page_User.php'><button class='btn'>Login now</button>";
                 }
             } else {
             ?>
                 <header>Sign Up</header>
-                <form action="" method="post" id="register_form">
+                <form action="" method="post" id="register_form" onsubmit="return validateForm()">
                     <div class="field input">
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username" autocomplete="new-password" required>
@@ -52,23 +51,24 @@
 
                     <div class="field input">
                         <label for="email">Email</label>
-                        <input type="text" name="email" id="email" autocomplete="new-password" required>
+                        <input type="email" name="email" id="email" autocomplete="email" required>
                     </div>
 
                     <div class="field input">
-                        <label for="password">Password</label>
-                        <input type="text" name="password" id="password" autocomplete="new-password" required>
+                        <label for="password">Password <span class="info-icon" onmouseover="showPasswordRequirements()" onmouseout="hideRequirements()" role="button" tabindex="0">ℹ️</span></label>
+                        <input type="password" name="password" id="password" autocomplete="new-password" required>
                     </div>
 
                     <div class="field input">
-                        <label for="age">Age</label>
-                        <input type="number" name="age" id="age" autocomplete="new-password" required>
+                        <label for="age">Age <span class="info-icon-1" onmouseover="showAgeRequirements()" onmouseout="hideRequirements()" role="button" tabindex="0">ℹ️</span></label>
+                        <input type="number" name="age" id="age" autocomplete="" required>
                     </div>
+
 
                     <div class="field input">
                         <label for="commuting-method">Commuting-Method</label>
                         <select id="commuting-method" name="commuting-method">
-                            <option>Please Select Your Transpotation</option>
+                            <option>Please Select Your Transportation</option>
                             <option value="Car">Car</option>
                             <option value="Motorcycle">Motorcycle</option>
                             <option value="Public-Transport">Public Transport</option>
@@ -78,7 +78,7 @@
                     <div class="field input">
                         <label for="energy">Energy</label>
                         <select id="energy" name="energy">
-                            <option>Please Select Your Transpotation</option>
+                            <option>Please Select Your Transportation</option>
                             <option value="Fan">Fan</option>
                             <option value="Air-Condition">Air-Condition</option>
                         </select>
@@ -94,16 +94,16 @@
                     </div>
 
                     <div class="field">
-                        <input type="submit" name="submit" value="Login" class="btn" required>
+                        <input type="submit" name="submit" value="Register" class="btn" required onsubmit="validate">
                     </div>
                     <div class="links">
                         Already a member<a href="Login_Page_User.php"> Sign In</a>
                     </div>
                 </form>
+            <?php } ?>
         </div>
-    <?php } ?>
     </div>
-
+    <script src="js/register_rules.js"></script>
 </body>
 
 </html>

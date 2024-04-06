@@ -1,7 +1,6 @@
 <?php
-include_once("html/Header.html");
+include_once("header.php");
 include_once("php/config.php");
-session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -17,7 +16,7 @@ $id = $_SESSION['user_Id'];
 $foodTotal = 0;
 $transportTotal = 0;
 $totalKWH = 0;
-$reduction = 0; 
+$reduction = 0;
 $milestoneAchieved = isMilestoneAchieved($id, $conn, $reduction);
 
 $stmt = $conn->prepare("SELECT food_total, transport_total, Total_KHW FROM food_carbon_emission WHERE user_Id = ? ORDER BY date_created DESC LIMIT 1");
@@ -31,6 +30,9 @@ if ($result && $result->num_rows > 0) {
     $transportTotal = $row['transport_total'];
     $totalKWH = $row['Total_KHW'];
 }
+
+
+
 
 $recommendations = generateRecommendations($foodTotal, $transportTotal, $totalKWH);
 
@@ -47,7 +49,7 @@ function generateRecommendations($foodTotal, $transportTotal, $totalKWH) {
         $recommendations[] = "Well done! Keep on reducing the emission!"; 
     }
     return $recommendations;
-}   
+}
 
 function analyzeData($foodTotal, $transportTotal, $totalKWH) {
     $insights = [];
@@ -159,6 +161,11 @@ $conn->close();
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+<style>
+a {
+    color: inherit;
+}
+</style>
 
 <body>
     <div id="mainContent">
@@ -234,7 +241,7 @@ $conn->close();
 </html>
 
 <?php
-    include "html/footer.html";
+    include_once ("html/footer.html");
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
