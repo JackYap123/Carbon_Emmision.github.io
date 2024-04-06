@@ -37,14 +37,14 @@ $recommendations = generateRecommendations($foodTotal, $transportTotal, $totalKW
 
 function generateRecommendations($foodTotal, $transportTotal, $totalKWH) {
     $recommendations = [];
-    if ($foodTotal > 4500) {
+    if ($foodTotal > 45) {
         $recommendations[] = "Consider reducing meat consumption and increasing plant-based foods.";
-    }
-    if ($transportTotal > 5200) {
+    } else if ($transportTotal > 5200) {
         $recommendations[] = "Consider using public transportation, biking, or walking.";
-    }
-    if ($totalKWH > 29000) {
+    } else if ($totalKWH > 29000) {
         $recommendations[] = "Consider reducing unnecessary use of electrical devices and switching to energy-saving products.";
+    } else {
+        $recommendations[] = "Well done! Keep on reducing the emission!"; 
     }
     return $recommendations;
 }   
@@ -179,7 +179,7 @@ $conn->close();
                             <li><?php echo htmlspecialchars($recommendation); ?></li>
                             <?php endforeach; ?>
                         </ul>
-                        <?php  echo "<p>You have reduced your carbon emissions by {$reduction}%.</p>";?>
+                        <?php  echo "<p>You have reduced your total carbon emissions by " . number_format($reduction, 1) . "%.</p>";?>
 
                     </div>
                 </div>
@@ -239,20 +239,23 @@ $conn->close();
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var ctx = document.getElementById('myChart').getContext('2d');
+    var categories = <?php echo json_encode($analysisResults['categories']); ?>;
+    var labelsWithUnit = Object.keys(categories).map(function(key) {
+        return key + ' (kgCO2)';
+    });
     var chart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: Object.keys(<?php echo json_encode($analysisResults['categories']); ?>),
+            labels: labelsWithUnit,
             datasets: [{
-                label: 'Carbon Emission（kgCO2）',
                 data: Object.values(<?php echo json_encode($analysisResults['categories']); ?>),
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(144, 255, 144, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 255, 192, 1)',
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                 ],
@@ -260,11 +263,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
             scales: {
                 y: {
                     beginAtZero: true
                 }
-            }
+            },
+
         }
     });
 });
