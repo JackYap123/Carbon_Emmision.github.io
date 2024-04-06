@@ -39,14 +39,14 @@ $recommendations = generateRecommendations($foodTotal, $transportTotal, $totalKW
 
 function generateRecommendations($foodTotal, $transportTotal, $totalKWH) {
     $recommendations = [];
-    if ($foodTotal > 45) {
+    if ($foodTotal > 4550) {
         $recommendations[] = "Consider reducing meat consumption and increasing plant-based foods.";
     } else if ($transportTotal > 5200) {
         $recommendations[] = "Consider using public transportation, biking, or walking.";
     } else if ($totalKWH > 29000) {
         $recommendations[] = "Consider reducing unnecessary use of electrical devices and switching to energy-saving products.";
     } else {
-        $recommendations[] = "Well done! Keep on reducing the emission!"; 
+        $recommendations[] = "Congratulations! You're already doing a great job at reducing your carbon emissions.";
     }
     return $recommendations;
 }
@@ -186,12 +186,21 @@ a {
                             <li><?php echo htmlspecialchars($recommendation); ?></li>
                             <?php endforeach; ?>
                         </ul>
-                        <?php  echo "<p>You have reduced your total carbon emissions by " . number_format($reduction, 1) . "%.</p>";?>
+                        <?php
+                        if ($reduction > 0) {
+                            echo "<p>Comparing to Yesterday, You have reduced your carbon emissions by " . number_format($reduction, 1) . "%.</p>";
+                        } else if ($reduction < 0) {
+                            echo "<p>Comparing to Yesterday, You have increased your carbon emissions by " . number_format(abs($reduction), 1) . "%.</p>";
+                        } else {
+                            echo "<p>Your carbon emissions have not changed from Yesterday.</p>";
+                        }
+                        ?>
 
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div id="graphContainer" class="p-4 shadow rounded">
+                        <h2 class="mb-3">Today's your result</h2>
                         <canvas id="myChart"></canvas>
                     </div>
                 </div>
