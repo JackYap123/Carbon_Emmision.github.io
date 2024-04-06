@@ -263,9 +263,11 @@ function validateFormTransportation() {
             alert("Please Field Out the All the Motorcycle section");
             return false;
         }
-    } else if (carSelect == "Public Transport") {
-        if (pbTypeSelect == "Please Select Public Transport Type" || distance == "")
-            alert("Please Field Out the All the Public Transport Type section")
+    } else if (carSelect == "Public-Transport") {
+        if (pbTypeSelect == "Please Select Public Transport Type" || distance == ""){
+            alert("Please Field Out the All the Public Transport Type section");
+            return false;
+        }
     }
     return true;
 }

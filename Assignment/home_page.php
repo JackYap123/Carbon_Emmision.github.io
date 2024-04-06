@@ -37,7 +37,7 @@
                 </div>
                 <div class="box">
                     <div class="box-image">
-                        <img src="image/personalized.png" class="image">
+                        <img src="image/personalized.png" class="image" alt="personalizedImg" >
                     </div>
                     <div class="box-content">
                         <div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="box">
                     <div class="box-image">
-                        <img src="image/historical.png" class="image">
+                        <img src="image/historical.png" class="image" alt="historicalImg">
                     </div>
                     <div class="box-content">
                         <div>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="box" style="margin-bottom: 0;">
                     <div class="box-image">
-                        <img src="image/share.png" class="image">
+                        <img src="image/share.png" class="image" alt="shareImg">
                     </div>
                     <div class="box-content">
                         <div>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="box">
                     <div class="box-image">
-                        <img src="image/educational.png" class="image">
+                        <img src="image/educational.png" class="image" alt="educationIcon">
                     </div>
                     <div class="box-content">
                         <div>
@@ -94,7 +94,7 @@
                 </div>
                 <div class="box">
                     <div class="box-image">
-                        <img src="image/calendar.png" class="image">
+                        <img src="image/calendar.png" class="image" alt="calenderIcon">
                     </div>
                     <div class="box-content">
                         <div>
@@ -105,7 +105,7 @@
                 </div>
                 <div class="box" style="margin-bottom: 0;">
                     <div class="box-image">
-                        <img src="image/feedback.png" class="image">
+                        <img src="image/feedback.png" class="image" alt="feedbackIcon">
                     </div>
                     <div class="box-content">
                         <div>
@@ -122,5 +122,5 @@
 </html>
 
 <?php
-    include "html/footer.html";
+    include_once("html/footer.html");
 ?>

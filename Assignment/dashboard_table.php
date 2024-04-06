@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Function to generate HTML table from database query result
-function generate_table($result) {
+function generateTable($result) {
     if ($result->num_rows > 0) {
         echo "<table>";
         echo "<tr><th>Time</th><th>Total Food(CO2)</th><th>Total Transport(CO2)</th><th>Total KHW</th></tr>"; // Change these column headers according to your table structure
@@ -26,14 +26,14 @@ $id = $_SESSION['user_Id'];
 
 // Step 2: Execute a query to fetch data
 $sql = "SELECT * FROM food_carbon_emission WHERE user_Id = $id
-AND date_created >= DATE_SUB(NOW(), INTERVAL 30 DAY)"; 
+AND date_created >= DATE_SUB(NOW(), INTERVAL 30 DAY)";
 // Change "your_table" to the name of your table
 $result = $con->query($sql);
 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>PHP Table from Database</title>
     <style>
@@ -55,7 +55,7 @@ $result = $con->query($sql);
 
 <?php
 // Step 3: Generate HTML table using the function
-generate_table($result);
+generateTable($result);
 
 // Step 4: Close connection
 $con->close();

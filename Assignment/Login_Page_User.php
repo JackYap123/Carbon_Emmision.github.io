@@ -51,8 +51,6 @@ session_start();
                             </div><br>";
                     echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";
                 }
-                if (isset($_SESSION['valid'])) {
-                }
             } else {
             ?>
                 <header>Login</header>

@@ -1,5 +1,5 @@
 <?php
- include("header.php");
+include_once("header.php");
 // Step 1: Database Connection
 $servername = "localhost";
 $username = "root";
@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
 $con->close();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Dashboard Diagram</title>
@@ -56,6 +56,10 @@ $con->close();
         <div id="container" style="width: 500px;height: 500px; z-index: 0;">
             <canvas id="myChart" width="400" height="400"></canvas>
         </div>
+        <div class="tooltip">
+            <img src="Image/questionIcon.jpg" class="question-icon" alt="iconImg">
+            <span class="tooltiptext">Hover over the top of the dashboard to hide the data</span>
+        </div>
     </div>
 
     <!-- Dropdown box to select sorting order -->
@@ -65,27 +69,29 @@ $con->close();
         <option value="desc">Highest First</option>
     </select>
     <button id="compareButton" onclick="compareHighest()">Compare Highest</button>
-    
+
     <button onclick="zoomIn()">Zoom In</button>
     <button onclick="zoomOut()">Zoom Out</button>
 
-
-    <table id="myTable">
-        <tr>
-            <th>Food Total</th>
-            <th>Transport Total</th>
-            <th>Electric Total</th>
-        </tr>
-        <?php
-        for ($i = 0; $i < count($foodData); $i++) {
-            echo "<tr>";
-            echo "<td class='chart-colors'>" . $foodData[$i] . "</td>";
-            echo "<td class='chart-colors2'>" . $transportData[$i] . "</td>";
-            echo "<td class='chart-colors3'>" . $electricData[$i] . "</td>";
-            echo "</tr>";
-        }
-        ?>
-    </table>
+    <figure>
+        <figcaption>Carbon Emission Table</figcaption>
+        <table id="myTable">
+            <tr>
+                <th>Food Total</th>
+                <th>Transport Total</th>
+                <th>Electric Total</th>
+            </tr>
+            <?php
+            for ($i = 0; $i < count($foodData); $i++) {
+                echo "<tr>";
+                echo "<td class='chart-colors'>" . $foodData[$i] . "</td>";
+                echo "<td class='chart-colors2'>" . $transportData[$i] . "</td>";
+                echo "<td class='chart-colors3'>" . $electricData[$i] . "</td>";
+                echo "</tr>";
+            }
+            ?>
+        </table>
+    </figure>
 
     <script src="js/dashboard.js"></script>
     <script>
@@ -116,7 +122,7 @@ $con->close();
                         label: 'Electric Total',
                         data: <?php echo json_encode($electricData); ?>,
                         backgroundColor: 'rgba(11,156,49,0.2)',
-                        borderColor: 'rgba(11,156,49,0.2)',
+                        borderColor: 'rgba(11,156,49,1)',
                         borderWidth: 1,
                         barThickness: 5 // Adjust the thickness of the bars
 
@@ -132,7 +138,7 @@ $con->close();
             }
         });
 
-    
+
 
         // Function to compare highest values
         function compareHighest() {
@@ -152,10 +158,8 @@ $con->close();
 
             alert("The highest value is in " + highestKey + " category.");
         }
-
-
     </script>
-    
+
 </body>
 <?php
 include_once("html/footer.html");

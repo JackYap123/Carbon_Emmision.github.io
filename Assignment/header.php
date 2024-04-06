@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
 
     // Step 5: Calculate time difference in minutes
     $current_time = time();
-    $time_difference_minutes = ($current_time - $submit_time) / 60;
+    $time_difference_minutes = ($current_time - $submit_time) / 360;
     if ($time_difference_minutes > 1440) {
         // If the difference is greater than 24 hours, set notification count to 1
         $_SESSION['notification_count'] = 1;
@@ -61,50 +61,38 @@ $con->close();
             });
         });
     </script>
-
-
 </head>
 
 <body>
-    <header>
-        <div class="head_container">
-            <div class="left">
-                <h1>CARBON EMISSION</h1>
-            </div>
-            <nav class="middle">
-                <a href="home_page.php" class="navi">Home</a>
-                <a href="daily_log_food.php" class="navi">Daily Record</a>
-                <a href="dashboard.php" class="navi">Historical</a>
-                <a href="Educational_Content.php" class="navi">Learn</a>
-                <a href="recommendations.php" class="navi">Recommendation</a>
-                <a href="Eco_Events_Calendar.php" class="navi">Event Calander</a>
-                <a href="feedback.php" class="navi">Feedback</a>
-
-
-                <span class="notification-icon">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-counter"><?php echo ($_SESSION['notification_count']); ?></span>
-                    <!-- Example: Displaying initial count -->
-                </span>
-
-            </nav>
-
-            <div class="right" style="padding-left:100px">
-                <button id="profile_button"><a href="User_Edit_Profile.php">Profile</a></button>
-            </div>
-            <div class="right">
-                <button id="profile_button"><a href="Register.php">Register</a></button>
-            </div>
+    <div class="head_container">
+        <div class="left">
+            <h1>CARBON EMISSION</h1>
         </div>
+        <nav class="middle">
+            <a href="home_page.php" class="navi">Home</a>
+            <a href="daily_log_food.php" class="navi">Daily Record</a>
+            <a href="dashboard.php" class="navi">Historical</a>
+            <a href="Educational_Content.php" class="navi">Learn</a>
+            <a href="recommendations.php" class="navi">Recommendation</a>
+            <a href="Eco_Events_Calendar.php" class="navi">Event Calander</a>
+            <a href="feedback.php" class="navi">Feedback</a>
 
-        <script>
-            // JavaScript to handle hiding register button and showing profile button
 
+            <span class="notification-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-counter"><?php echo ($_SESSION['notification_count']); ?></span>
+                <!-- Example: Displaying initial count -->
+            </span>
 
-            // Call this function when registration is completed
-            // For example, you can call it after a successful registration process
-            // For demonstration, I'm just calling it after 3 seconds
-        </script>
+        </nav>
+
+        <div class="right" style="padding-left:100px">
+            <button id="profile_button"><a href="User_Edit_Profile.php">Profile</a></button>
+        </div>
+        <div class="right">
+            <button id="profile_button"><a href="Register.php">Register</a></button>
+        </div>
+    </div>
 </body>
 
 </html>

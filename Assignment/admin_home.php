@@ -7,35 +7,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Custom CSS -->
-  <style>
-    /* Custom styles for vertical centering */
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .navbar {
-      flex-direction: column;
-    }
-
-    .navbar-nav {
-      width: 100%;
-      text-align: center;
-    }
-
-    .navbar-nav .nav-item {
-      width: 100%;
-    }
-
-    .navbar-nav .nav-link {
-      padding: 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 

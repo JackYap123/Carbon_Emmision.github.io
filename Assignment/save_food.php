@@ -59,6 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $food_total += 0 / 1000;
             }
             break;
+        default:
+            return false;
+            break;
     }
 
     $transport_total = 0;
@@ -81,6 +84,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'Lorry':
                     $type_number = 400;
                     break;
+                default:
+                    return false;
+                    break;
             }
             switch ($car_gas) {
                 case 'Petrol':
@@ -95,6 +101,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'Electric':
                     $gas_number = 100;
                     break;
+                default:
+                    return false;
+                    break;
             }
             switch ($road_type) {
                 case 'Main Road':
@@ -108,6 +117,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;
                 case 'Dash':
                     $road_number = 100;
+                    break;
+                default:
+                    return false;
                     break;
             }
             $transport_total = (($type_number * $drive_distance) + ($gas_number * $drive_distance) + ($road_number * $drive_distance)) / 1000;
@@ -120,6 +132,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'Sport':
                     $type_number = 120;
                     break;
+                default:
+                    return false;
+                    break;
             }
             switch ($motor_gas) {
                 case 'Gasoline':
@@ -131,8 +146,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 case 'Propane':
                     $gas_number = 210;
                     break;
+                default:
+                    return false;
+                    break;
             }
-            switch ($road_type) {
+            switch ($road_type) { //for check road type
                 case 'Main Road':
                     $road_number = 150;
                     break;
@@ -144,6 +162,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;
                 case 'Dash':
                     $road_number = 100;
+                    break;
+                default:
+                    return false;
                     break;
             }
             $transport_total = (($type_number * $drive_distance) + ($gas_number * $drive_distance) + ($road_number * $drive_distance)) / 1000;
@@ -168,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             break;
     }
 
-    $Total_KHW = $electricity_consumption * $carbon_itensity/1000;
+    $Total_KHW = $electricity_consumption * $carbon_itensity / 1000;
     $id = $_SESSION['user_Id'];
     // Assuming $result is the result of your database query
 
@@ -176,17 +197,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO food_carbon_emission (diet, meat, vegetable, wasted_food, waste, car_type, car_gas, road_type, motor_type, motor_gas, public_transport_type, drive_distance, electricity_consumption, carbon_itensity, food_total, transport_total, Total_KHW, user_Id)
         VALUES ('$diet', '$meat', '$vegetable', '$wasted_food', '$waste', '$car_type', '$car_gas', '$road_type', '$motor_type', '$motor_gas', '$public_transport_type', '$drive_distance', '$electricity_consumption', '$carbon_itensity', '$food_total', '$transport_total','$Total_KHW','$id')";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === true) {
 
         // Set session variables
-        
+
         $_SESSION['food_total'] = $food_total;
         $_SESSION['transport_total'] = $transport_total;
         $_SESSION['Total_KHW'] = $Total_KHW;
-       
+
 
         // Reset notification count
-       
+
 
         header("Location: historical.php");
         exit();

@@ -144,3 +144,80 @@ main{
 .error_message{
     color:red;
 }
+
+.field {
+    margin-bottom: 20px;
+}
+
+.input select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Customized select arrow */
+.input select::-ms-expand {
+    display: none;
+}
+
+.input select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Styling for labels */
+.label {
+    font-weight: bold;
+}
+
+/* Styling for options */
+.option {
+    padding: 10px;
+}
+
+/* 3D effect on hover */
+.input select:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    border:2px solid black;
+
+}
+
+/* 3D effect on focus */
+.input select:focus {
+    outline: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(0, 149, 246, 0.3);
+}
+
+/* Styling for placeholder option */
+.input select option[disabled] {
+    color: #999;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-left: 100px;
+    margin-top: -20px;
+    padding: 5px;
+}
+
+.info-icon {
+    cursor: pointer;
+}
+
+

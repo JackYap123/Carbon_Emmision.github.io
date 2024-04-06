@@ -7,16 +7,11 @@ $user_id = $_SESSION['user_Id'];
 $food_total = $_SESSION['food_total'];
 $transport_total = $_SESSION['transport_total'];
 $Total_KHW = $_SESSION['Total_KHW'];
-$Total_Time_Span = $_SESSION['Total_Time_Span'];
-$Total_Time_Span_Month = $_SESSION['Total_Time_Span_Month'];
 if (!isset($_SESSION['user_Id'])) {
   // Redirect user to login page if not logged in
   header("Location: home_page.php");
   exit();
 }
-
-
-
 
 // Step 1: Database Connection
 $servername = "localhost";
@@ -63,7 +58,7 @@ $con->close();
     <div class="row">
       <div class="col-sm">
         <div class="card">
-          <img class="card-img-top" src="https://source.unsplash.com/400x300/?food" alt="Food Image">
+          <img class="card-img-top" src="https://source.unsplash.com/400x300/?food" alt="FoodImg">
           <div class="card-body">
             <h5 class="card-title">Column 1</h5>
             <p class="card-text">Your food carbon emission is total is:<?php echo $food_total ?> Kwh</p>
@@ -72,7 +67,7 @@ $con->close();
       </div>
       <div class="col-sm">
         <div class="card">
-          <img class="card-img-top" src="https://source.unsplash.com/400x300/?transportation" alt="Food Image">
+          <img class="card-img-top" src="https://source.unsplash.com/400x300/?transportation" alt="transportationImg">
           <div class="card-body">
             <h5 class="card-title">Column 2</h5>
             <p class="card-text">Your trasportation carbon emission is total is:<?php echo $transport_total ?> Kwh</p>
@@ -81,7 +76,7 @@ $con->close();
       </div>
       <div class="col-sm">
         <div class="card">
-          <img class="card-img-top" src="https://source.unsplash.com/400x300/?electric" alt="Food Image">
+          <img class="card-img-top" src="https://source.unsplash.com/400x300/?electric" alt="electricImg">
           <div class="card-body">
             <h5 class="card-title">Column 3</h5>
             <p class="card-text">Your electrical carbon emission is total is:<?php echo $Total_KHW ?> Kwh
@@ -103,10 +98,10 @@ $con->close();
       data: {
         labels: ["Food Total", "Transport Total", "Total KHW"],
         datasets: [{
-          label: 'Latest Data',
+          label: 'Latest Data All Average KHW',
           data: <?php echo json_encode([$latestData['food_total'], $latestData['transport_total'], $latestData['Total_KHW']]); ?>,
-          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(11,156,49,0.2)'],
-          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(11,156,49,0.2)'],
+          backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)'],
+          borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)'],
           borderWidth: 1
         }]
       },

@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label>Have you wasted food?</label><br>
+                            
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="wasted_food" id="wasted-food-yes" value="Yes" onchange="showWasteInput()()">
                                 <label class="form-check-label" for="wasted-food-yes">Yes</label>

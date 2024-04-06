@@ -16,7 +16,7 @@ $id = $_SESSION['user_Id'];
 $foodTotal = 0;
 $transportTotal = 0;
 $totalKWH = 0;
-$reduction = 0; 
+$reduction = 0;
 $milestoneAchieved = isMilestoneAchieved($id, $conn, $reduction);
 
 $stmt = $conn->prepare("SELECT food_total, transport_total, Total_KHW FROM food_carbon_emission WHERE user_Id = ? ORDER BY date_created DESC LIMIT 1");
@@ -49,7 +49,7 @@ function generateRecommendations($foodTotal, $transportTotal, $totalKWH) {
         $recommendations[] = "Consider reducing unnecessary use of electrical devices and switching to energy-saving products.";
     }
     return $recommendations;
-}   
+}
 
 function analyzeData($foodTotal, $transportTotal, $totalKWH) {
     $insights = [];
@@ -241,7 +241,7 @@ $conn->close();
 </html>
 
 <?php
-    include "html/footer.html";
+    include_once ("html/footer.html");
 ?>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
