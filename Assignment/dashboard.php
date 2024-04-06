@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
         $electricData[] = $row['Total_KHW'];
     }
 } else {
-    echo "<<div class='message-container'>
+    echo "<div class='message-container'>
         You haven't submitted any data before.
         </div><br>";
     echo "<a href='Login_Page_User.php'><button class='btn'>Go Back</button>";
