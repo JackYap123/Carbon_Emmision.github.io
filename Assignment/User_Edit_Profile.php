@@ -1,4 +1,5 @@
 <?php
+// Start session to allow session variables usage
 session_start();
 
 include_once("php/config.php");
@@ -40,13 +41,16 @@ if (!isset($_SESSION['valid'])) {
                 $food =  $_POST['food'];
                 $energy =  $_POST['energy'];
                 $id = $_SESSION['user_Id'];
+                // Update user profile in the database
 
                 $edit_query = mysqli_query($con, "UPDATE users SET UserName='$username',Email='$email',Age='$age',Food='$food',Energy = '$energy',Commuting_Method = '$commuting_method' WHERE user_Id = $id") or die("error occures");
+                // If update successful, display success message
 
                 if ($edit_query) {
                     echo "<div class='message'>
                     <p>Profile Updated!</p>
                   </div> <br>";
+                    // Link to home page
 
                     echo "<a href='home_page.php'><button class='btn'>Login in now</button>";
                 }
@@ -63,6 +67,7 @@ if (!isset($_SESSION['valid'])) {
                     $res_Energy = $result['Energy'];
                 }
             ?>
+            <!-- Form of the user profile information -->
                 <header>Change Profile</header>
                 <form action="" method="post" onsubmit="return validateForm()">
                     <div class="field input">
