@@ -26,30 +26,29 @@ $result = $stmt->get_result();
 
 if ($result && $result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $foodTotal = $row['food_total'];
+    $foodTotal = $row['food_total']/ 1000;
     $transportTotal = $row['transport_total'];
-    $totalKWH = $row['Total_KHW'];
+    $totalKWH = $row['Total_KHW'] / 1000;
 }
-
-
 
 
 $recommendations = generateRecommendations($foodTotal, $transportTotal, $totalKWH);
 
-
 function generateRecommendations($foodTotal, $transportTotal, $totalKWH) {
     $recommendations = [];
-    if ($foodTotal > 4550) {
+    if ($foodTotal > 4.5) {
         $recommendations[] = "Consider reducing meat consumption and increasing plant-based foods.";
-    } else if ($transportTotal > 5200) {
+    } else if ($transportTotal > 5.2) {
         $recommendations[] = "Consider using public transportation, biking, or walking.";
-    } else if ($totalKWH > 29000) {
+    } else if ($totalKWH > 29) {
         $recommendations[] = "Consider reducing unnecessary use of electrical devices and switching to energy-saving products.";
     } else {
         $recommendations[] = "Congratulations! You're already doing a great job at reducing your carbon emissions.";
     }
     return $recommendations;
 }
+
+$analysisResults = analyzeData($foodTotal, $transportTotal, $totalKWH);
 
 function analyzeData($foodTotal, $transportTotal, $totalKWH) {
     $insights = [];
@@ -68,7 +67,6 @@ function analyzeData($foodTotal, $transportTotal, $totalKWH) {
     return $insights;
 }
 
-$analysisResults = analyzeData($foodTotal, $transportTotal, $totalKWH);
 
 function isMilestoneAchieved($userId, $conn, &$reduction) {
     $stmt = $conn->prepare("SELECT food_total, transport_total, Total_KHW, date_created FROM food_carbon_emission WHERE user_Id = ? ORDER BY date_created DESC");
@@ -332,6 +330,7 @@ function shareOnSocialMedia(platform) {
 
     window.open(shareURL, '_blank');
 }
+
 window.onload = function() {
     document.getElementById('shareModal').style.display = 'block';
     document.getElementById('mainContent').classList.add('blur-background');
@@ -342,6 +341,7 @@ document.getElementById('closeModal').addEventListener('click', function() {
     document.getElementById('mainContent').classList.remove('blur-background');
 });
 </script>
+
 <style>
 .blur-background {
     filter: blur(8px);
