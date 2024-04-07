@@ -54,6 +54,7 @@ $con->close();
 </head>
 
 <body>
+    <!-- use to contain the item of dashboard and the icon -->
     <div id="container-1">
         <div id="container" style="width:700px; height: 700px;z-index:0; margin-left:25%">
             <canvas id="myChart" width="400" height="400"></canvas>
@@ -83,7 +84,7 @@ $con->close();
 
     <button onclick="zoomIn()">Zoom In</button>
     <button onclick="zoomOut()">Zoom Out</button>
-
+<!-- create table function -->
     <figure>
         <figcaption>Carbon Emission Table</figcaption>
         <table id="myTable">
